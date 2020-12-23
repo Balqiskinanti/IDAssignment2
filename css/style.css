@@ -1,0 +1,10 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("http://www.fubiz.net/wp-content/uploads/2014/11/Clouds-Illustrations-by-Aaron-Campbell_0.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
