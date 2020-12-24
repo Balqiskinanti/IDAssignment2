@@ -26,18 +26,53 @@ $(document).ready(function () {
             },
         };
         $.ajax(settings).done(function (response) {
-            let s= new signUp(getName,getMail,getPassword,getAddress);
-            let signUpArray =[];
+            // error checking 1 : user to fill in all input before submitting
+            if (getPassword=="" || getName=="" || getMail=="" || getAddress==""){
+                alert("please fill in all inputs");
+            }else{
+                // error checking 2: user to fill in valid email address
+                if (response.Valid == true){
+                    // error checking 3: password must be 8 characters or more
+                    if(getPassword.length>=8){
+                        flag = 1;
+                        //error checking 4: user to input a uniqe email address everytime they sign up.
+                        if (count>0){
+                            for (i = 0; i < signUpArray.length; i++) {
+                                if(signUpArray[i].email == getMail){
+                                    alert("email taken");
+                                    flag =0;
+                                }
+                            }
+                        }
+                        // pass all error checking. add to localstorage
+                        if (flag==1){
+                            let s= new signUp(getName,getMail,getPassword,getAddress);
+                            let signUpArray =[];
 
-            if (localStorage.getItem('signUp')) {
-                signUpArray = JSON.parse(localStorage.getItem("signUp"));
-            }
+                            if (localStorage.getItem('signUp')) {
+                                signUpArray = JSON.parse(localStorage.getItem("signUp"));
+                            }
 
-            signUpArray.push(s);
+                            signUpArray.push(s);
 
-            localStorage["signUp"]=JSON.stringify(signUpArray);
-            alert("Sign up successful. You can log in now");
-            $("#myForm")[0].reset()
+                            localStorage["signUp"]=JSON.stringify(signUpArray);
+                            alert("Sign up successful. You can log in now");
+                            $("#myForm")[0].reset()
+                        }else{
+                            alert("Password must be at least 8 characters long");
+                        }
+                    }else{
+                        alert("Invalid mail");
+                    }
+                }
+            }   
         })
+        // function object constructor
+        function signUp(name,email,password,address){
+            this.name=name;
+            this.email=email;
+            this.password=password;
+            this.address=address;
+        }
     })
 })
