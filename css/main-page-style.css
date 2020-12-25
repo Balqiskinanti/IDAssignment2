@@ -1,0 +1,11 @@
+.content{
+    background-color: bisque;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (min-width: 1200px){
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 2000px;
+}
+}
