@@ -83,4 +83,64 @@ $(document).ready(function(){
       });
       })
 
+
+      $(".btn2").click(function(){
+          $("#addForm").show();
+          $("#dateTimeInput").change(function(){
+              getDateTimeInput = $("#dateTimeInput").val();
+          })
+          $("#reminderInput").change(function(){
+              getReminderInput = $("#reminderInput").val();
+          })
+          $(".btn3").click(function(e){
+              e.preventDefault();
+              savedDataArray = JSON.parse(localStorage.getItem("savedData"));
+              loginArray = JSON.parse(localStorage.getItem("login"));
+              for (i = 0; i < savedDataArray.length; i++) {
+                  try {
+                      if (savedDataArray[i].time.length >0){
+                      dateTimeArray =savedDataArray[i].time;
+                      reminderArray =savedDataArray[i].reminder;
+                  }
+                  } catch (error) {
+                      dateTimeArray =[];
+                      reminderArray =[];
+                  }
+                  if(savedDataArray[i].name == loginArray[0].name){
+                      dateTimeArray.push(getDateTimeInput);
+                      reminderArray.push(getReminderInput);
+                      savedDataArray[i].time=dateTimeArray;
+                      savedDataArray[i].reminder=reminderArray;
+                      localStorage["savedData"]=JSON.stringify(savedDataArray);
+                  }
+                  console.log(savedDataArray[i].time);
+                  console.log(savedDataArray[i].reminder);
+              }
+          })
+
+      })
+      dateStr = year+"-"+month+"-"+date;
+      savedDataArray = JSON.parse(localStorage.getItem("savedData"));
+
+      $(".btn4").click(function(){
+        for (i = 0; i < savedDataArray.length; i++) {
+            for (u=0; u<savedDataArray[i].time.length; u++){
+                time = savedDataArray[i].time[u].replace("T"," ");
+                $(".show-all").append(`${time}  ${savedDataArray[i].reminder[u]} <br>`);
+                
+            }
+        }
+      })
+          
+
+
+          for (i = 0; i < savedDataArray.length; i++) {
+            for (u=0; u<savedDataArray[i].time.length; u++){
+          if(savedDataArray[i].time[u].substring(0,10) == dateStr){
+            time = savedDataArray[i].time[u].replace("T"," ");
+            $(".show-today").append(` <br> ${time.substring(11,16)}  ${savedDataArray[i].reminder[u]}`);
+        }
+    }
+}
+
 })
