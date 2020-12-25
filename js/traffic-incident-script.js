@@ -13,7 +13,9 @@ $(document).ready(function(){
         data: {
         },
         success:function(data){
+            var dataArray =[];
             for (i = 0; i < data.value.length; i++) {
+                dataArray.push(data.value[i].Message);
                 if(data.value[i].Type == "Accident"){
                     $(".accident").append("<br>"+data.value[i].Message).show();
                 }else if(data.value[i].Type == "Roadwork"){
