@@ -48,7 +48,29 @@
       <div class="container">
         <div class="col text-center">
           <h2>Reminders</h2>
-          <p>you have nothing planned today</p>
+          <p class="show-today"> </p>
+          <p class="show-all"></p>
+          <form id="addForm" style="display: none;">
+            <div class="form-group column">
+                <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
+                <div class="col-10">
+                <input class="form-control" type="datetime-local"  id="dateTimeInput">
+                </div>
+            </div>
+            <div class="form-group column">
+                <label for="reminderInput">To Do</label>
+                <input type="text" class="form-control" id="reminderInput" placeholder="Brunch @Starbucks">
+            </div>
+            <button type="submit" class="btn btn3 btn-primary" href ="#">Save</button>
+        </form>
+          <form>
+            <button type="submit" class="btn btn2 btn-primary">
+              set reminders
+            </button>
+            <button type="submit" class="btn btn4 btn-primary">
+              show all reminders
+            </button>
+          </form>
           <div>
             <img src="https://i.pinimg.com/564x/30/72/cb/3072cbc739ef4f8c79d8dd318a5b7dd7.jpg" class="img-fluid" alt="">
           </div>
