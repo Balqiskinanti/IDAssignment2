@@ -82,7 +82,7 @@ $(document).ready(function(){
           carParkNo = getCarpark[i].carpark_number;
           numberOfLots= getCarpark[i].carpark_info[0].lots_available;
           typeOfLots = getCarpark[i].carpark_info[0].lot_type;
-          $("#display").html(`${carParkNo} ${numberOfLots} ${typeOfLots}`);
+          $("#display").append(` ${numberOfLots} in type ${typeOfLots}`);
           console.log(numberOfLots);
           break;
         }
