@@ -50,7 +50,7 @@
       <div class="container ">
 
         <!-- Reminders -->
-        <div class="row text-center" id="reminder">
+        <div class="row text-center" id="reminder" style="padding: 200px 0;">
           <div class="col-lg-6 d-flex align-items-center justify-content-center">
             <div class="col-lg-12">
               <h2>Reminders</h2>
@@ -58,18 +58,14 @@
               <p class="show-all"></p>
               <form id="addForm" style="display: none;">
                 <div class="form-group column">
-                    <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
-                    <div class="col-10">
                     <input class="form-control" type="datetime-local"  id="dateTimeInput">
-                    </div>
                 </div>
                 <div class="form-group column">
-                    <label for="reminderInput">To Do</label>
                     <input type="text" class="form-control" id="reminderInput" placeholder="Brunch @Starbucks">
                 </div>
                 <button type="submit" class="btn btn3 btn-primary" href ="#">Save</button>
               </form>
-              <form>
+              <form class="py-2">
                 <button type="submit" class="btn btn2 btn-primary">
                   set reminders
                 </button>
@@ -85,93 +81,102 @@
         </div>
 
         <!-- Reminders -->
-          <div class="col text-center" id="traffic-image">
+          <div class="col text-center" id="traffic-image" style="padding: 0px 0px 200px 0px;">
             <h2>Traffic Image</h2>
             <p>Traffc in Singapore can be stressful. Don't worry, we got your back!</p>
             <div>
               <div class="container">
-                <div class="col-md-6">
-
-                </div>
-                <div class="col-md-6">
-                  <div class="embed-responsive embed-responsive-16by9 " >
-                    <iframe src="https://data.gov.sg/dataset/traffic-images/resource/e127e29a-bd48-47e2-a0a7-e89ce31f10c7/view/39ba8de0-6242-40d3-8664-793316c47b09" frameBorder="0"> </iframe>       
+                <div class="row">
+                  <div class="col-1 p-0">
                   </div>
+                  <div class="col-10 p-0" >
+                    <div class="embed-responsive embed-responsive-16by9 " >
+                      <iframe src="https://data.gov.sg/dataset/traffic-images/resource/e127e29a-bd48-47e2-a0a7-e89ce31f10c7/view/39ba8de0-6242-40d3-8664-793316c47b09" frameBorder="0"> </iframe>       
+                    </div>
+                  </div>
+                  <div class="col-1 p-0">
+                  </div>  
                 </div>
               </div>
             </div>
           </div>
 
-      <div class="row">
-        <div class="col-lg-6  d-flex align-items-center justify-content-center">
-            <!-- Traffic Incident -->
-            <div class="col text-center" id="traffic-incident">
-              <h2>Traffic Incidents</h2>
-              <p>Remember to check incidents currently happening on the road before heading out!</p>
-              <a href="traffic-incident.html">click here for more</a>
-              <div>
-                <img src="https://i.pinimg.com/564x/28/4a/9b/284a9be14f3bcdb2988d3b80b51a17ef.jpg" class="img-fluid" alt="">
+        <div class="row">
+          <div class="col-lg-6  d-flex align-items-center justify-content-center" style="padding: 0px 0px 200px 0px;">
+              <!-- Traffic Incident -->
+              <div class="col text-center" id="traffic-incident">
+                <h2>Traffic Incidents</h2>
+                <p>Remember to check incidents currently happening on the road before heading out!</p>
+                <a href="traffic-incident.html" >click here for more</a>
+                <div>
+                  <img src="images/traffic-incident.jpg" class="img-fluid" alt="" style="padding-top: 20px;">
+                </div>
               </div>
-            </div>
-        </div>
-        <div class="col-lg-6  d-flex align-items-center justify-content-center">
-            <!-- Carpark Slots -->
-            <div class="col text-center" id="carpark">
-              <h2>Carpark Slots</h2>
-              <p>Psst.. We know how many parking slots are left in your area! </p>
-              <div class="container">
-                <form>
-                  <div class="form-group">
-                    <div class="row">
-                        <div class="col-4">
-                        </div>
-                        <div class="col-3">
-                          <input type="text" class="form-control" id="carParkNoInput" >
-                        </div>
-                        <div class="col-1">
-                          <button type="submit" class="btn btn-primary">Search</button>  
-                        </div>
-                        <div class="col-4">
-                        </div>
-                    </div>
-                  </div>  
-                </form>
-              </div>
-              <div id="display">
-              </div>
-              <div>
-                <img src="https://i.pinimg.com/564x/b7/87/60/b78760a700e609a57cf85ad34135c764.jpg" class="img-fluid" alt="">
-              </div>
-          </div>    
+          </div>
+          <div class="col-lg-6  d-flex align-items-center justify-content-center" style="padding: 0px 0px 200px 0px;">
+              <!-- Carpark Slots -->
+              <div class="col text-center" id="carpark">
+                <h2>Carpark Slots</h2>
+                <p>Psst.. We know how many parking slots are left in your area! </p>
+                <div class="container">
+                  <form>
+                    <div class="form-group">
+                      <div class="row">
+                          <div class="col-4">
+                          </div>
+                          <div class="col-3">
+                            <input type="text" class="form-control" id="carParkNoInput" placeholder="HLM">
+                          </div>
+                          <div class="col-1">
+                            <button type="submit" class="btn btn-primary">Search</button>  
+                          </div>
+                          <div class="col-4">
+                          </div>
+                      </div>
+                    </div>  
+                  </form>
+                </div>
+                <div id="display" style="padding-bottom: 5px;">
+                  Parking Slots Left:
+                </div>
+                <div>
+                  <img src="images/parking.jpg" class="img-fluid" alt="">
+                </div>
+            </div>    
+          </div>
         </div>
       </div>
 
-      <footer class="d-flex align-items-center justify-content-center" style="background-color: white;">
+      <div class="container px-0">
+        <div class="container px-0">
+      <footer class="d-flex align-items-center justify-content-center" style="background-color: beige;">
         <div class="container">
-          <div class="row">
+          <div class="row my-5 px-0" >
             <div class="col-6">
               Drive Safe <br>
               Singapore <br>
               Balqis Kinanti <br>
               Follow me
             </div>
-            <div class="col-3">
+            <div class="col-3 text-center">
               developer <br>
               github <br>
               API links
             </div>
-            <div class="col-3">
+            <div class="col-3 text-center" id="contact">
               Feedback <br>
               Email
             </div>
           </div>
-          <div class="row">
+          <div class="row my-5">
             <div class="col-12 text-center " style="font-size: 1rem;">
               Drive Safe 2020
             </div>
           </div>
         </div>          
       </footer>
+        </div>
+      </div>
       
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
