@@ -33,12 +33,9 @@ $(document).ready(function (e) {
                 
                     let s= new savedData(signUpArray[i].name,signUpArray[i].email,signUpArray[i].password,signUpArray[i].address);
                     let savedDataArray =[];
-                    if (localStorage.getItem('savedData')) {
-                        savedDataArray = JSON.parse(localStorage.getItem("savedData"));
-                    }
                     savedDataArray.push(s);
                     localStorage["savedData"]=JSON.stringify(savedDataArray);
-
+                    alert("Login Successsful. \nSigning up and in multiple accounts will clear previous data. We recommend you to sign up with only one account. Signing out will also clear data");
                 }
             }
             if(flag != true){
