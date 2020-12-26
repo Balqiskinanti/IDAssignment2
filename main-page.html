@@ -9,12 +9,12 @@
     <title>Document</title>
 </head>
 <body>
+  <!-- Navigation  header-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="main-page.html">Drive Safe</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
@@ -35,9 +35,10 @@
               </div>
             </li>
           </ul>
-          
         </div>
       </nav>
+
+      <!--Greetings  -->
       <div class="container d-flex align-items-center flex-row content" style="height:100vh;">
         <div class="container">
             <h1 class="greetings"></h1>
@@ -45,7 +46,10 @@
         </div>
       </div>
 
+      <!-- Features -->
       <div class="container ">
+
+        <!-- Reminders -->
         <div class="row text-center" id="reminder">
           <div class="col-lg-6">
             <h2>Reminders</h2>
@@ -77,6 +81,8 @@
             <img src="https://i.pinimg.com/564x/30/72/cb/3072cbc739ef4f8c79d8dd318a5b7dd7.jpg" class="img-fluid" alt="">
           </div>
         </div>
+
+        <!-- Reminders -->
         <div class="col text-center" id="traffic-image">
           <h2>Traffic Image</h2>
           <p>Traffc in Singapore can be stressful. Don't worry, we got your back!</p>
@@ -86,45 +92,52 @@
             </div>
           </div>
         </div>
-        <div class="col text-center" id="traffic-incident">
-          <h2>Traffic Incidents</h2>
-          <p>Remember to check incidents currently happening on the road before heading out!</p>
-          <a href="traffic-incident.html">click here for more</a>
-          <div>
-            <img src="https://i.pinimg.com/564x/28/4a/9b/284a9be14f3bcdb2988d3b80b51a17ef.jpg" class="img-fluid" alt="">
-          </div>
-        </div>
-        <div class="col text-center" id="carpark">
-          <h2>Carpark Slots</h2>
-          <p>Psst.. We know how many parking slots are left in your area! </p>
-        <div class="container">
-          <form>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-4">
 
-                </div>
-                <div class="col-3">
-                  <input type="text" class="form-control" id="carParkNoInput" >
-                </div>
-                <div class="col-1">
-                  <button type="submit" class="btn btn-primary">Search</button>  
-                </div>
-                <div class="col-4">
-
-                </div>
+      <div class="row">
+        <div class="col-lg-6">
+            <!-- Traffic Incident -->
+            <div class="col text-center" id="traffic-incident">
+              <h2>Traffic Incidents</h2>
+              <p>Remember to check incidents currently happening on the road before heading out!</p>
+              <a href="traffic-incident.html">click here for more</a>
+              <div>
+                <img src="https://i.pinimg.com/564x/28/4a/9b/284a9be14f3bcdb2988d3b80b51a17ef.jpg" class="img-fluid" alt="">
               </div>
-            </div>  
-          </form>
-          </div>
-          <div id="display">
-
-          </div>
-          <img src="https://i.pinimg.com/564x/b7/87/60/b78760a700e609a57cf85ad34135c764.jpg" class="img-fluid" alt="">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <!-- Carpark Slots -->
+            <div class="col text-center" id="carpark">
+              <h2>Carpark Slots</h2>
+              <p>Psst.. We know how many parking slots are left in your area! </p>
+              <div class="container">
+                <form>
+                  <div class="form-group">
+                    <div class="row">
+                        <div class="col-4">
+                        </div>
+                        <div class="col-3">
+                          <input type="text" class="form-control" id="carParkNoInput" >
+                        </div>
+                        <div class="col-1">
+                          <button type="submit" class="btn btn-primary">Search</button>  
+                        </div>
+                        <div class="col-4">
+                        </div>
+                    </div>
+                  </div>  
+                </form>
+              </div>
+              <div id="display">
+              </div>
+              <div>
+                <img src="https://i.pinimg.com/564x/b7/87/60/b78760a700e609a57cf85ad34135c764.jpg" class="img-fluid" alt="">
+              </div>
+          </div>    
         </div>
       </div>
 
-
+      <!-- Feedback/Contact -->
       <div class="container" style="background-color: purple; height: 18vh; color: wheat;" id="contact">
         <div class="row">
           <div class="col-sm-12">
@@ -133,17 +146,16 @@
         </div>
       </div>          
 
-        <footer style="background-color: white; height: 18vh;">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-12 pt-5 text-center">
-                Drive Safe 2020
-              </div>
+      <!-- Footer -->
+      <footer style="background-color: white; height: 18vh;">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 pt-5 text-center">
+              Drive Safe 2020
             </div>
-          </div>          
-        </footer>
-      
-
+          </div>
+        </div>          
+      </footer>
       
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
