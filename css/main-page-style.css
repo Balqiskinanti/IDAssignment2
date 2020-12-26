@@ -1,11 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+}
 .content{
     background-color: bisque;
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+.greetings{
+    font-size: 4rem;
+}
+.weather{
+    font-size: 2rem;
+}
 @media (min-width: 1200px){
 .container, .container-lg, .container-md, .container-sm, .container-xl {
     max-width: 2000px;
 }
+}
+@media(min-width:280px){
+    footer{
+        font-size: 13px;
+    }
 }
