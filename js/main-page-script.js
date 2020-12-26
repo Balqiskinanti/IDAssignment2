@@ -24,8 +24,6 @@ $(document).ready(function(){
         success:function(data){
             loginArray = JSON.parse(localStorage.getItem("login"));
             for (i = 0; i < loginArray.length; i++) {
-                console.log(loginArray[i].address);
-                console.log(data.items[0].forecasts[0].area);
                 for (u = 0; u < data.items[0].forecasts.length; u++){
                     if (loginArray[i].address == data.items[0].forecasts[u].area){
                         var forecast = data.items[0].forecasts[0].forecast;
@@ -130,26 +128,36 @@ $(document).ready(function(){
       })
       dateStr = year+"-"+month+"-"+date;
       savedDataArray = JSON.parse(localStorage.getItem("savedData"));
-
-      $(".btn4").click(function(){
-        for (i = 0; i < savedDataArray.length; i++) {
-            for (u=0; u<savedDataArray[i].time.length; u++){
+      loginArray = JSON.parse(localStorage.getItem("login"));
+      
+    $(".btn4").click(function(){
+    for (i = 0; i < savedDataArray.length; i++) {
+        if(savedDataArray[i].time == null){
+            continue;
+        }else{
+        for (u=0; u<savedDataArray[i].time.length; u++){
+            if(savedDataArray[i].name == loginArray[0].name){
                 time = savedDataArray[i].time[u].replace("T"," ");
                 $(".show-all").append(`${time}  ${savedDataArray[i].reminder[u]} <br>`);
-                
             }
         }
-      })
-          
-
-
-          for (i = 0; i < savedDataArray.length; i++) {
-            for (u=0; u<savedDataArray[i].time.length; u++){
-          if(savedDataArray[i].time[u].substring(0,10) == dateStr){
-            time = savedDataArray[i].time[u].replace("T"," ");
-            $(".show-today").append(` <br> ${time.substring(11,16)}  ${savedDataArray[i].reminder[u]}`);
+    }
+    }
+    })
+    
+    for (i = 0; i < savedDataArray.length; i++) {
+        if(savedDataArray[i].time == null){
+            continue;
+        }else{
+        for (u=0; u<savedDataArray[i].time.length; u++){
+            if(savedDataArray[i].name == loginArray[0].name){
+                if(savedDataArray[i].time[u].substring(0,10) == dateStr){
+                    time = savedDataArray[i].time[u].replace("T"," ");
+                    $(".show-today").append(` <br> ${time.substring(11,16)}  ${savedDataArray[i].reminder[u]}`);
+                }
+            }
         }
     }
-}
+    }
 
 })
