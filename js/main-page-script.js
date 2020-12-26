@@ -103,26 +103,19 @@ $(document).ready(function(){
               e.preventDefault();
               savedDataArray = JSON.parse(localStorage.getItem("savedData"));
               loginArray = JSON.parse(localStorage.getItem("login"));
-              for (i = 0; i < savedDataArray.length; i++) {
-                  try {
-                      if (savedDataArray[i].time.length >0){
-                      dateTimeArray =savedDataArray[i].time;
-                      reminderArray =savedDataArray[i].reminder;
-                  }
-                  } catch (error) {
+              i =savedDataArray.length -1;
                       dateTimeArray =[];
                       reminderArray =[];
-                  }
-                  if(savedDataArray[i].name == loginArray[0].name){
+                  
                       dateTimeArray.push(getDateTimeInput);
                       reminderArray.push(getReminderInput);
                       savedDataArray[i].time=dateTimeArray;
                       savedDataArray[i].reminder=reminderArray;
                       localStorage["savedData"]=JSON.stringify(savedDataArray);
-                  }
+                  
                   console.log(savedDataArray[i].time);
                   console.log(savedDataArray[i].reminder);
-              }
+              
           })
 
       })
