@@ -29,7 +29,38 @@ My XD Wireframe :art: :
    * Add new reminders
    * Show today's reminders
    * Show all reminders
-* 
 * Carpark Slots: allows user to see how many parking slots are left by inputting the carpark number in.
 * Traffic images: allows user to see at real time pictures on the traffic currently by clicking on the interactive map.
 * Traffic Incidents: allows user to check on the current incidents happening on the road. They can also filter the output by inputting their location on the seach bar.
+
+### Technologies Used
+* [HTML](https://github.com/Balqiskinanti/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/tree/main)
+  * This was used for the basic content structure for the website.
+* [CSS](https://github.com/Balqiskinanti/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/tree/main/css)
+  * this was used for the styling of the website.
+* [JavaScript](https://github.com/Balqiskinanti/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/tree/main/js)
+  * This was used for the interactivity of the website.
+* [Adobe Illustrator](https://github.com/Balqiskinanti/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/tree/main/images)
+  * This was used to make the SVGs for the social links. 
+* [Adobe XD](https://github.com/Balqiskinanti/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/tree/main/xd)
+  * This was used to make the wireframe of the Website : desktop and mobile view. 
+
+### Testing
+:pushpin: How my project looks :
+
+### Credits
+#### Media :link: 
+1. The photo from the main page and traffic incident page was obtained from 
+   * [pinterest](https://www.pinterest.com/)
+  
+#### Acknowledgements :sun_with_face:
+I received inspiration from this [website](https://www.grab.com/sg/)
+
+#### APIs Used :sun_with_face:
+* [Data.gov.sg](https://data.gov.sg/dataset/)
+  * [traffic images](https://data.gov.sg/dataset/traffic-images?view_id=a0e54baf-6ef7-4bca-9aa2-8c6ca37a0a0e&resource_id=e127e29a-bd48-47e2-a0a7-e89ce31f10c7)
+  * [Carpark](https://data.gov.sg/dataset/carpark-availability)
+  * [Weather](https://api.data.gov.sg/v1/environment/2-hour-weather-forecast)
+* [mytransport.sg](https://www.mytransport.sg/content/mytransport/home/dataMall.html)
+  * [Traffic incidents](https://www.mytransport.sg/content/dam/datamall/datasets/LTA_DataMall_API_User_Guide.pdf)
+
