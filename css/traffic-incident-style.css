@@ -14,3 +14,24 @@
 .card-title{
     text-align: center;
 }
+
+@media (min-width: 1200px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 540px;
+    }
+    }
+    @media(min-width: 992px){
+        .container, .container-lg, .container-md, .container-sm, .container-xl {
+            max-width: 720px;
+        }
+    }
+    @media(min-width: 768px){
+        .container, .container-lg, .container-md, .container-sm, .container-xl {
+            max-width: 960px;
+        }
+    }
+    @media(min-width: 576px){
+        .container, .container-lg, .container-md, .container-sm, .container-xl {
+            max-width: 2000px;
+        }
+    }
