@@ -44,6 +44,9 @@ $(document).ready(function(){
                     }
                 }
             }
+        },
+        error:function(data){
+            alert("Oh no! The server is experiencing some issues. Try refreshing the page again after 30 mins ,Thank you :)");
         }
     });
     
