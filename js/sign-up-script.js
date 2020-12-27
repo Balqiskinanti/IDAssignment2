@@ -1,6 +1,32 @@
 // jshint esversion:6
 $(document).ready(function () {
     $(".btn").click(function (e) {
+        $.ajax({
+            type:"GET",
+            dataType: 'json',
+            contentType:"text/plain",
+            url:"https://api.data.gov.sg/v1/environment/2-hour-weather-forecast",
+            headers:{
+    
+            },
+            data: {
+    
+            },
+            success:function(data){
+                address=0;
+                for (u = 0; u < data.items[0].forecasts.length; u++){
+                    if (getAddress == data.items[0].forecasts[u].area){
+                        address=1;
+                        break;
+                    }
+                }
+                
+            },
+            error:function(data){
+                alert("Oh no! The server is experiencing some issues. Try refreshing the page again after 30 mins ,Thank you :)");
+            }
+        });
+    
         e.preventDefault();
 
         // get the input for all fields in the form
@@ -47,6 +73,7 @@ $(document).ready(function () {
                         }
                         // pass all error checking. add to localstorage
                         if (flag==1){
+                            if(address==1){
                             let s= new signUp(getName,getMail,getPassword,getAddress);
                             let signUpArray =[];
 
@@ -59,6 +86,9 @@ $(document).ready(function () {
                             localStorage["signUp"]=JSON.stringify(signUpArray);
                             alert("Sign up successful. You can log in now");
                             $("#myForm")[0].reset();
+                            }else{
+                                alert("we cant find the address.");
+                            }
                         }else{
                             alert("Password must be at least 8 characters long");
                         }
