@@ -1,3 +1,4 @@
+// jshint esversion:6
 $(document).ready(function(){
     var d = new Date();
     var year = d.getFullYear();
@@ -37,14 +38,14 @@ $(document).ready(function(){
                             greetings ="Night";
                         }
                         console.log(hours);
-                        $('.greetings').html(` Good ${greetings} ${loginArray[i].name}`);
+                        $('.greetings').html(` <b> Good ${greetings} ${loginArray[i].name} </b>`);
                         $('.weather').html(` ${loginArray[i].address} is ${forecast}`);
                         break;
                     }
                 }
             }
         }
-    })
+    });
     
     if (hours<10){
         hours = "0"+hours;
@@ -55,7 +56,7 @@ $(document).ready(function(){
     if (seconds<10){
         seconds = "0"+seconds;
     }
-    var dateTime = `${year}-${month}-${date}T${hours}%3A${minutes}%3A${seconds}`
+    var dateTime = `${year}-${month}-${date}T${hours}%3A${minutes}%3A${seconds}`;
     var url = "https://api.data.gov.sg/v1/transport/carpark-availability?date_time="+dateTime;
     console.log(url);
       var settings = {
@@ -69,61 +70,92 @@ $(document).ready(function(){
 
       $("#carParkNoInput").change(function (){
           getCarParkNo = $("#carParkNoInput").val();
-      })
+      });
 
-      $(".btn").click(function(e){
+      $(".btn1").click(function(e){
         e.preventDefault();
         $.ajax(settings).done(function (response) {
-            
-      //console.log(response);
       getCarpark= response.items[0].carpark_data;
       for (i = 0; i < getCarpark.length; i++) {
+        flag=0;
         if (getCarParkNo == getCarpark[i].carpark_number){
           carParkNo = getCarpark[i].carpark_number;
           numberOfLots= getCarpark[i].carpark_info[0].lots_available;
           typeOfLots = getCarpark[i].carpark_info[0].lot_type;
           $("#display").append(` ${numberOfLots} in type ${typeOfLots}`);
-          console.log(numberOfLots);
+          flag=1;
           break;
         }
       }
-      });
+      if(flag==0){
+          alert("Invalid Carpark ID");
+      }
       })
+      .fail(function(response){
+          alert("Oh no! The server is experiencing some issues. Try refreshing the page again after 30 mins ,Thank you :)");
+      })
+      });
 
 
-      $(".btn2").click(function(){
+      $(".btn2").click(function(e){
+          e.preventDefault();
           $("#addForm").show();
-          $("#dateTimeInput").change(function(){
-              getDateTimeInput = $("#dateTimeInput").val();
-          })
+          $("#dateInput").change(function(){
+              getDateInput = $("#dateInput").val();
+          });
+          $("#timeInput").change(function(){
+            getTimeInput = $("#timeInput").val();
+        });
           $("#reminderInput").change(function(){
               getReminderInput = $("#reminderInput").val();
-          })
+          });
           $(".btn3").click(function(e){
               e.preventDefault();
+              try {
+                getDateTimeInput = getDateInput+"T"+getTimeInput;
+              } catch (error) {
+                  alert("please fill in the date and time input");
+              }
+              console.log(getDateTimeInput);
               savedDataArray = JSON.parse(localStorage.getItem("savedData"));
               loginArray = JSON.parse(localStorage.getItem("login"));
-              i =savedDataArray.length -1;
-                      dateTimeArray =[];
-                      reminderArray =[];
-                  
-                      dateTimeArray.push(getDateTimeInput);
-                      reminderArray.push(getReminderInput);
-                      savedDataArray[i].time=dateTimeArray;
-                      savedDataArray[i].reminder=reminderArray;
-                      localStorage["savedData"]=JSON.stringify(savedDataArray);
-                  
-                  console.log(savedDataArray[i].time);
-                  console.log(savedDataArray[i].reminder);
+              u = savedDataArray.length-1;
+              try {
+                if(savedDataArray[u].time.length == undefined){
+                    dateTimeArray =[];
+                    reminderArray =[];
+                  }else{
+                    dateTimeArray = savedDataArray[u].time;
+                    reminderArray = savedDataArray[u].reminder;
+                  }
+              } catch (error) {
+                dateTimeArray =[];
+                reminderArray =[];
+              }
               
-          })
+            
+                    
+            dateTimeArray.push(getDateTimeInput);
+            try {
+                console.log(getReminderInput);
+                reminderArray.push(getReminderInput);
+                savedDataArray[u].time=dateTimeArray;
+                savedDataArray[u].reminder=reminderArray;
+                localStorage["savedData"]=JSON.stringify(savedDataArray);
+                alert("Reminders saved. You can reload your browser now.");
+            } catch (error) {
+                alert("please fill in the reminder input");
+            }
+            
+          });
 
-      })
+      });
       dateStr = year+"-"+month+"-"+date;
       savedDataArray = JSON.parse(localStorage.getItem("savedData"));
       loginArray = JSON.parse(localStorage.getItem("login"));
       
-    $(".btn4").click(function(){
+    $(".btn4").click(function(e){
+        e.preventDefault();
     for (i = 0; i < savedDataArray.length; i++) {
         if(savedDataArray[i].time == null){
             continue;
@@ -131,12 +163,12 @@ $(document).ready(function(){
         for (u=0; u<savedDataArray[i].time.length; u++){
             if(savedDataArray[i].name == loginArray[0].name){
                 time = savedDataArray[i].time[u].replace("T"," ");
-                $(".show-all").append(`${time}  ${savedDataArray[i].reminder[u]} <br>`);
+                $(".show-all").append(`<tr><th> ${time}</th> <th> ${savedDataArray[i].reminder[u]}</th></tr>`);
             }
         }
     }
     }
-    })
+    });
     
     for (i = 0; i < savedDataArray.length; i++) {
         if(savedDataArray[i].time == null){
@@ -153,4 +185,4 @@ $(document).ready(function(){
     }
     }
 
-})
+});
