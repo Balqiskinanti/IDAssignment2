@@ -19,6 +19,7 @@ Considering there are also very few apps that offer traffic information, it's al
 I decided to go for a more simple colour scheme and font as it's a website that must cater to all individual's taste. I added colours at the first div and footer on all pages for consistency. To spice it up, I made the placements of content different for each div so it does not get too repetitive and boring. 
 
 My XD Wireframe :art: :
+[Wireframe](https://github.com/Balqiskinanti/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/tree/main/xd)
 
 
 ### Features
