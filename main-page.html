@@ -41,7 +41,7 @@
       <!--Greetings  -->
       <div class="container d-flex align-items-center flex-row content" style="height:100vh;">
         <div class="container">
-            <h1 class="greetings animated slideInLeft"></h1>
+            <p class="greetings"></p>
             <p class="weather"></p>
         </div>
       </div>
@@ -55,15 +55,22 @@
             <div class="col-lg-12">
               <h2>Reminders</h2>
               <p class="show-today"> </p>
-              <p class="show-all"></p>
+              <table class="show-all"><tr><th>Time</th><th>Reminders</th></tr></table>
               <form id="addForm" style="display: none;">
-                <div class="form-group column">
-                    <input class="form-control" type="datetime-local"  id="dateTimeInput">
+                <div class="row">
+                <div class="form-group col-6 pt-2">
+                    <input class="form-control" type="date"  id="dateInput">
                 </div>
-                <div class="form-group column">
+                <div class="form-group col-6 pt-2">
+                  <input class="form-control" type="time"  id="timeInput">
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-12">
                     <input type="text" class="form-control" id="reminderInput" placeholder="Brunch @Starbucks">
                 </div>
-                <button type="submit" class="btn btn3 btn-primary" href ="#">Save</button>
+              </div>
+              <button type="submit" class="btn btn3 btn-primary" >Save</button>
               </form>
               <form class="py-2">
                 <button type="submit" class="btn btn2 btn-primary">
@@ -91,7 +98,7 @@
                   </div>
                   <div class="col-10 p-0" >
                     <div class="embed-responsive embed-responsive-16by9 " >
-                      <iframe src="https://data.gov.sg/dataset/traffic-images/resource/e127e29a-bd48-47e2-a0a7-e89ce31f10c7/view/39ba8de0-6242-40d3-8664-793316c47b09" frameBorder="0"> </iframe>       
+                      <iframe src="https://data.gov.sg/dataset/traffic-images/resource/e127e29a-bd48-47e2-a0a7-e89ce31f10c7/view/39ba8de0-6242-40d3-8664-793316c47b09" > </iframe>       
                     </div>
                   </div>
                   <div class="col-1 p-0">
@@ -128,7 +135,7 @@
                             <input type="text" class="form-control" id="carParkNoInput" placeholder="HLM">
                           </div>
                           <div class="col-1">
-                            <button type="submit" class="btn btn-primary">Search</button>  
+                            <button type="submit" class="btn btn1 btn-primary">Search</button>  
                           </div>
                           <div class="col-4">
                           </div>
