@@ -1,3 +1,4 @@
+// jshint esversion:6
 $(document).ready(function(){
     var params = {
     };
@@ -42,16 +43,22 @@ $(document).ready(function(){
     
             $("#trafficIncidentsInput").change(function (){
                 getTrafficIncidentsInput = $("#trafficIncidentsInput").val();
-            })
+            });
 
             $(".btn").click(function (e){
                 e.preventDefault();
+                $(".showIncident").html("");
+                $(".showIncident").append(`<tr><th>Type</th><th>Incident</th></tr>`);
                 for (i = 0; i < data.value.length; i++) {
                     if (data.value[i].Message.toLowerCase().indexOf(getTrafficIncidentsInput.toLowerCase()) != -1){
-                        console.log(`${data.value[i].Type} ${data.value[i].Message}`);
+                        $(".showIncident").append(`<tr><th>${data.value[i].Type} </th> <th> ${data.value[i].Message}</th></tr>`);
                     }
                 }
-            })
+            });
+        },
+        error: function(data){
+            alert("Oh no! The server is handling too many data at once! Come back again tomorrow ,Thank you :)");
         }
-    })
-})
+    });
+    
+});
