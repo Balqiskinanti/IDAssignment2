@@ -1,3 +1,4 @@
+// jshint esversion:6
 $(document).ready(function (e) {
     // parse signup json to loop and check if user has sign up
     signUpArray = JSON.parse(localStorage.getItem("signUp"));
@@ -7,11 +8,11 @@ $(document).ready(function (e) {
 
     $("#mailInput").change(function (){
         getMail = $("#mailInput").val();
-    })
+    });
 
     $("#passwordInput").change(function (){
         getPassword = $("#passwordInput").val();
-    })
+    });
 
     $("#btn").click(function (e) {
         flag = false;
@@ -44,7 +45,7 @@ $(document).ready(function (e) {
             }
 
         }
-    })
+    });
 
     // function object constructor for login
     function login(name,email,password,address){
@@ -61,4 +62,4 @@ $(document).ready(function (e) {
         this.address=address;
     }
 
-})
+});
