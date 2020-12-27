@@ -1,3 +1,4 @@
+// jshint esversion:6
 $(document).ready(function () {
     $(".btn").click(function (e) {
         e.preventDefault();
@@ -57,7 +58,7 @@ $(document).ready(function () {
 
                             localStorage["signUp"]=JSON.stringify(signUpArray);
                             alert("Sign up successful. You can log in now");
-                            $("#myForm")[0].reset()
+                            $("#myForm")[0].reset();
                         }else{
                             alert("Password must be at least 8 characters long");
                         }
@@ -66,7 +67,7 @@ $(document).ready(function () {
                     }
                 }
             }   
-        })
+        });
         // function object constructor
         function signUp(name,email,password,address){
             this.name=name;
@@ -74,5 +75,5 @@ $(document).ready(function () {
             this.password=password;
             this.address=address;
         }
-    })
-})
+    });
+});
