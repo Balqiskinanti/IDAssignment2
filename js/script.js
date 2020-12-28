@@ -31,12 +31,11 @@ $(document).ready(function (e) {
                     loginArray.push(l);
                     localStorage["login"]=JSON.stringify(loginArray);
 
-                
                     let s= new savedData(signUpArray[i].name,signUpArray[i].email,signUpArray[i].password,signUpArray[i].address);
                     let savedDataArray =[];
                     savedDataArray.push(s);
                     localStorage["savedData"]=JSON.stringify(savedDataArray);
-                    alert("Login Successsful. \nSigning up and in multiple accounts will clear previous data. We recommend you to sign up with only one account. Signing out will also clear data");
+                    alert("Login Successsful. \n Note: Logging in and out will clear previous data");
                 }
             }
             if(flag != true){
@@ -54,7 +53,7 @@ $(document).ready(function (e) {
         this.password=password;
         this.address=address;
     }
-
+    //function object constructor for savedData
     function savedData(name,email,password,address){
         this.name=name;
         this.email=email;

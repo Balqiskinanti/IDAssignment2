@@ -2,7 +2,7 @@
 $(document).ready(function(){
     var params = {
     };
-    
+    // call API for traffic incidents
     $.ajax({
         type:"GET",
         dataType: 'json',
@@ -14,6 +14,7 @@ $(document).ready(function(){
         data: {
         },
         success:function(data){
+            // appending the incident message in the respective types
             var dataArray =[];
             for (i = 0; i < data.value.length; i++) {
                 dataArray.push(data.value[i].Message);
@@ -39,12 +40,16 @@ $(document).ready(function(){
                     $(".vehicle").append("<br>"+data.value[i].Message).show();
                 }
             }
+            // search function 
+            // get user input for area
             getTrafficIncidentsInput = $("#trafficIncidentsInput").val();
     
             $("#trafficIncidentsInput").change(function (){
                 getTrafficIncidentsInput = $("#trafficIncidentsInput").val();
             });
 
+            // if button is clicked
+            // show the message and type of incident
             $(".btn").click(function (e){
                 e.preventDefault();
                 $(".showIncident").html("");
@@ -56,6 +61,7 @@ $(document).ready(function(){
                 }
             });
         },
+        // alert user if there's something wrong with API
         error: function(data){
             alert("Oh no! The server is handling too many data at once! Come back again tomorrow ,Thank you :)");
         }

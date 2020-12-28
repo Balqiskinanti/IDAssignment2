@@ -1,16 +1,16 @@
 // jshint esversion:6
 $(document).ready(function () {
+    // if button is clicked
     $(".btn").click(function (e) {
+        // call weather API 
         $.ajax({
             type:"GET",
             dataType: 'json',
             contentType:"text/plain",
             url:"https://api.data.gov.sg/v1/environment/2-hour-weather-forecast",
             headers:{
-    
             },
             data: {
-    
             },
             success:function(data){
                 address=0;
@@ -20,13 +20,11 @@ $(document).ready(function () {
                         break;
                     }
                 }
-                
             },
             error:function(data){
                 alert("Oh no! The server is experiencing some issues. Try refreshing the page again after 30 mins ,Thank you :)");
             }
         });
-    
         e.preventDefault();
 
         // get the input for all fields in the form
@@ -34,7 +32,6 @@ $(document).ready(function () {
         getMail = $("#mailInput").val();
         getPassword = $("#passwordInput").val();
         getAddress= $("#addressInput").val();
-
         // if there's already a signup in storage, parse it. 
         // if not, make count = 0 (to check if count>0, loop and see if email is already taken)
         if (localStorage.getItem('signUp')) {
@@ -44,7 +41,7 @@ $(document).ready(function () {
             count=0;
         }
 
-        // api  to check if email is valid
+        // call API  to check if email is valid
         var settings = {
             "url": "https://verify.gmass.co/verify?email="+getMail+"&key=85df4d70-399f-473c-9c2e-5c8ac9114ed6",
             "method": "GET",
@@ -71,9 +68,11 @@ $(document).ready(function () {
                                 }
                             }
                         }
-                        // pass all error checking. add to localstorage
+                        //check password length
                         if (flag==1){
+                            //check address is in the weather API data for area
                             if(address==1){
+                            // pass all error checking. add to localstorage
                             let s= new signUp(getName,getMail,getPassword,getAddress);
                             let signUpArray =[];
 

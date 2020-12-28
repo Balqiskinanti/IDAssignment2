@@ -1,5 +1,6 @@
 // jshint esversion:6
 $(document).ready(function(){
+    // getting current date and breaking it to year,month,date,hours,minutes,seconds
     var d = new Date();
     var year = d.getFullYear();
     var month = d.getMonth()+1;
@@ -8,21 +9,22 @@ $(document).ready(function(){
     var minutes = d.getMinutes();
     var seconds = d.getSeconds();
     var params = {
-        
     };
-
+    // API for weather
     $.ajax({
         type:"GET",
         dataType: 'json',
         contentType:"text/plain",
         url:"https://api.data.gov.sg/v1/environment/2-hour-weather-forecast",
         headers:{
-
         },
         data: {
-
         },
         success:function(data){
+            // get login array from localstorage
+            // loop to see if user's input on home address area = API's data on location
+            // check if time is morning, afternoon, evening or night
+            // add message greetings and weather to html 
             loginArray = JSON.parse(localStorage.getItem("login"));
             for (i = 0; i < loginArray.length; i++) {
                 for (u = 0; u < data.items[0].forecasts.length; u++){
@@ -32,12 +34,11 @@ $(document).ready(function(){
                             greetings = "Morning";
                         }else if(hours <=16){
                             greetings ="Afternoon";
-                        }else if(hours <=19){
+                        }else if(hours <=18){
                             greetings = "Evening";
                         }else{
                             greetings ="Night";
                         }
-                        console.log(hours);
                         $('.greetings').html(` <b> Good ${greetings} ${loginArray[i].name} </b>`);
                         $('.weather').html(` ${loginArray[i].address} is ${forecast}`);
                         break;
@@ -49,7 +50,7 @@ $(document).ready(function(){
             alert("Oh no! The server is experiencing some issues. Try refreshing the page again after 30 mins ,Thank you :)");
         }
     });
-    
+    //change hours to 00 format for API url to work
     if (hours<10){
         hours = "0"+hours;
     }
@@ -61,84 +62,94 @@ $(document).ready(function(){
     }
     var dateTime = `${year}-${month}-${date}T${hours}%3A${minutes}%3A${seconds}`;
     var url = "https://api.data.gov.sg/v1/transport/carpark-availability?date_time="+dateTime;
-    console.log(url);
-      var settings = {
-      "url": url,
-      "method": "GET",
-      "timeout": 0,
-      "headers": {
-      },
-      };
-      getCarParkNo = $("#carParkNoInput").val();
+    var settings = {
+        "url": url,
+        "method": "GET",
+        "timeout": 0,
+        "headers": {
+        },
+    };
+    getCarParkNo = $("#carParkNoInput").val();
 
-      $("#carParkNoInput").change(function (){
-          getCarParkNo = $("#carParkNoInput").val();
-      });
-
-      $(".btn1").click(function(e){
+    $("#carParkNoInput").change(function (){
+        getCarParkNo = $("#carParkNoInput").val();
+    });
+    // if button for parking is cliked
+    // call API for carpark
+    // loop to search for matching input and carpark number in API
+    // append in html number slots left and type
+    // if not found, alert user.
+    $(".btn1").click(function(e){
         e.preventDefault();
         $.ajax(settings).done(function (response) {
-      getCarpark= response.items[0].carpark_data;
-      for (i = 0; i < getCarpark.length; i++) {
-        flag=0;
-        if (getCarParkNo == getCarpark[i].carpark_number){
-          carParkNo = getCarpark[i].carpark_number;
-          numberOfLots= getCarpark[i].carpark_info[0].lots_available;
-          typeOfLots = getCarpark[i].carpark_info[0].lot_type;
-          $("#display").append(` ${numberOfLots} in type ${typeOfLots}`);
-          flag=1;
-          break;
-        }
-      }
-      if(flag==0){
-          alert("Invalid Carpark ID");
-      }
-      })
-      .fail(function(response){
-          alert("Oh no! The server is experiencing some issues. Try refreshing the page again after 30 mins ,Thank you :)");
-      })
-      });
+            getCarpark= response.items[0].carpark_data;
+            for (i = 0; i < getCarpark.length; i++) {
+                flag=0;
+                if (getCarParkNo == getCarpark[i].carpark_number){
+                    carParkNo = getCarpark[i].carpark_number;
+                    numberOfLots= getCarpark[i].carpark_info[0].lots_available;
+                    typeOfLots = getCarpark[i].carpark_info[0].lot_type;
+                    $("#display").append(` ${numberOfLots} in type ${typeOfLots}`);
+                    flag=1;
+                    break;
+                }
+            }
+            if(flag==0){
+                alert("Invalid Carpark ID");
+            }
+        }).fail(function(response){
+                alert("Oh no! The server is experiencing some issues. Try refreshing the page again after 30 mins ,Thank you :)");
+            })
+    });
 
-
-      $(".btn2").click(function(e){
-          e.preventDefault();
-          $("#addForm").show();
-          $("#dateInput").change(function(){
-              getDateInput = $("#dateInput").val();
-          });
-          $("#timeInput").change(function(){
+    // if button for add new reminder is clicked
+    // show form in html 
+    // get user input
+    $(".btn2").click(function(e){
+        e.preventDefault();
+        $("#addForm").show();
+        $("#dateInput").change(function(){
+            getDateInput = $("#dateInput").val();
+        });
+        $("#timeInput").change(function(){
             getTimeInput = $("#timeInput").val();
         });
-          $("#reminderInput").change(function(){
-              getReminderInput = $("#reminderInput").val();
-          });
-          $(".btn3").click(function(e){
-              e.preventDefault();
-              try {
+        $("#reminderInput").change(function(){
+            getReminderInput = $("#reminderInput").val();
+        });
+        //if save utton is clicked
+        // concatenate date and time.
+        // check if user has input time and date
+        $(".btn3").click(function(e){
+            e.preventDefault();
+            try {
                 getDateTimeInput = getDateInput+"T"+getTimeInput;
-              } catch (error) {
-                  alert("please fill in the date and time input");
-              }
-              console.log(getDateTimeInput);
-              savedDataArray = JSON.parse(localStorage.getItem("savedData"));
-              loginArray = JSON.parse(localStorage.getItem("login"));
-              u = savedDataArray.length-1;
-              try {
+            } catch (error) {
+                alert("please fill in the date and time input");
+            }
+            savedDataArray = JSON.parse(localStorage.getItem("savedData"));
+            loginArray = JSON.parse(localStorage.getItem("login"));
+            u = savedDataArray.length-1;
+            //check if there is any time and reminder in savedData already
+            // if yes, get that
+            // if not, initialise as empty array
+            try {
                 if(savedDataArray[u].time.length == undefined){
                     dateTimeArray =[];
                     reminderArray =[];
-                  }else{
+                }else{
                     dateTimeArray = savedDataArray[u].time;
                     reminderArray = savedDataArray[u].reminder;
-                  }
-              } catch (error) {
+                }
+            } catch (error) {
                 dateTimeArray =[];
                 reminderArray =[];
-              }
-              
-            
-                    
+            }
+            // append time and date to array
             dateTimeArray.push(getDateTimeInput);
+            // append reminder to array
+            // check if user already provide reminder
+            // update savedDataArray in localStorage
             try {
                 console.log(getReminderInput);
                 reminderArray.push(getReminderInput);
@@ -149,30 +160,29 @@ $(document).ready(function(){
             } catch (error) {
                 alert("please fill in the reminder input");
             }
-            
-          });
-
-      });
-      dateStr = year+"-"+month+"-"+date;
-      savedDataArray = JSON.parse(localStorage.getItem("savedData"));
-      loginArray = JSON.parse(localStorage.getItem("login"));
-      
+        });
+    });
+    dateStr = year+"-"+month+"-"+date;
+    savedDataArray = JSON.parse(localStorage.getItem("savedData"));
+    loginArray = JSON.parse(localStorage.getItem("login"));
+    // if button to show all reminder is clicked  
     $(".btn4").click(function(e){
         e.preventDefault();
-    for (i = 0; i < savedDataArray.length; i++) {
-        if(savedDataArray[i].time == null){
-            continue;
-        }else{
-        for (u=0; u<savedDataArray[i].time.length; u++){
-            if(savedDataArray[i].name == loginArray[0].name){
-                time = savedDataArray[i].time[u].replace("T"," ");
-                $(".show-all").append(`<tr><th> ${time}</th> <th> ${savedDataArray[i].reminder[u]}</th></tr>`);
+        for (i = 0; i < savedDataArray.length; i++) {
+            if(savedDataArray[i].time == null){
+                continue;
+            }else{
+                for (u=0; u<savedDataArray[i].time.length; u++){
+                    if(savedDataArray[i].name == loginArray[0].name){
+                        time = savedDataArray[i].time[u].replace("T"," ");
+                        $(".show-all").append(`<tr><th> ${time}</th> <th> ${savedDataArray[i].reminder[u]}</th></tr>`);
+                    }
+                }
             }
         }
-    }
-    }
     });
-    
+    // append to html if there's any reminder today 
+    // by comparing it with today's date
     for (i = 0; i < savedDataArray.length; i++) {
         if(savedDataArray[i].time == null){
             continue;
@@ -187,5 +197,4 @@ $(document).ready(function(){
         }
     }
     }
-
 });

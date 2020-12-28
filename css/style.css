@@ -1,13 +1,16 @@
+/* remove padding and margin */
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+/* set bg image */
 body{
     background-image: url("https://balqiskinanti.github.io/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
+/* style box for form */
 .row{
     margin-top: 80px;
     background-color: rgb(219,237,251);
@@ -17,6 +20,7 @@ body{
 img{
     border-radius: 30px;
 }
+/* style button */
 .btn{
     border:none;
     outline: none;

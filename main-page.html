@@ -6,193 +6,224 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
     crossorigin="anonymous">
     <link rel="stylesheet" href="css/main-page-style.css">
-    <title>Document</title>
+    <title>Drive Safe</title>
 </head>
 <body>
-    <!-- Navigation  header-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="main-page.html">Drive Safe</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-              </li>
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">Logout</a>
-              </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Features
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#reminder">Reminders</a>
-                <a class="dropdown-item" href="#carpark">Carpark Slots</a>
-                <a class="dropdown-item" href="#traffic-image">Traffic Images</a>
-                <a class="dropdown-item" href="#traffic-incident">Traffic Incidents</a>
+  <!-- Navigation  bar-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- logo -->
+    <a class="navbar-brand" href="main-page.html">Drive Safe</a>
+    <!-- hamburger icon button for when screen size is small -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <!-- contact -->
+        <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+        </li>
+        <!-- logout -->
+        <li class="nav-item">
+            <a class="nav-link" href="index.html">Logout</a>
+        </li>
+        <!-- dropdown menu for features -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Features
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#reminder">Reminders</a>
+            <a class="dropdown-item" href="#carpark">Carpark Slots</a>
+            <a class="dropdown-item" href="#traffic-image">Traffic Images</a>
+            <a class="dropdown-item" href="#traffic-incident">Traffic Incidents</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--Greetings  -->
+  <div class="container d-flex align-items-center flex-row content" style="height:100vh;">
+    <div class="container">
+      <p class="greetings"></p>
+      <p class="weather"></p>
+    </div>
+  </div>
+  <!-- Features 
+  1. reminders
+  2. traffic images
+  3. traffic incidents
+  4. carpark slots-->
+  <div class="container ">
+    <!-- Reminders -->
+    <div class="row text-center" id="reminder" style="padding: 200px 0;">
+      <!-- 2 columns :
+      1. reminders content:
+          i) title
+          ii) reminders for today (if any)
+          iii) all reminders (if any), table
+          iv) buttons
+              a. add reminders, form
+                  - date input
+                  - time input
+                  - text input
+              b. show all reminders
+      2. picture -->
+      <!-- 1 -->
+      <div class="col-lg-6 d-flex align-items-center justify-content-center">
+        <div class="col-lg-12">
+          <!-- 1 i) -->
+          <h2>Reminders</h2>
+          <!-- 1 ii) -->
+          <p class="show-today"> </p>
+          <!-- 1 iii) -->
+          <table class="show-all"><tr><th>Time</th><th>Reminders</th></tr></table>
+          <!-- 1 iv) a form-->
+          <form id="addForm" style="display: none;">
+            <div class="row">
+              <!-- date input -->
+              <div class="form-group col-6 pt-2">
+                  <input class="form-control" type="date"  id="dateInput">
               </div>
-            </li>
-          </ul>
+              <!-- time input -->
+              <div class="form-group col-6 pt-2">
+                <input class="form-control" type="time"  id="timeInput">
+              </div>
+            </div>
+            <div class="row">
+              <!-- reminders input -->
+              <div class="form-group col-12">
+                <input type="text" class="form-control" id="reminderInput" placeholder="Brunch @Starbucks">
+              </div>
+            </div>
+            <!-- save button -->
+            <button type="submit" class="btn btn3 btn-primary" >Save</button>
+          </form>
+          <!-- 1 iv) buttons-->
+          <form class="py-2">
+            <button type="submit" class="btn btn2 btn-primary">
+              set reminders
+            </button>
+            <button type="submit" class="btn btn4 btn-primary">
+              show all reminders
+            </button>
+          </form>  
         </div>
-      </nav>
-
-      <!--Greetings  -->
-      <div class="container d-flex align-items-center flex-row content" style="height:100vh;">
+      </div>
+      <div class="col-lg-6 d-flex align-items-center justify-content-center">
+        <img src="images/friends.jpg" class="img-fluid" alt="friends taking picture">
+      </div>
+    </div>
+    <!-- Traffic images: responsive map with traffic image -->
+    <div class="col text-center" id="traffic-image" style="padding: 0px 0px 200px 0px;">
+      <!-- title -->
+      <h2>Traffic Image</h2>
+      <p>Traffic in Singapore can be stressful. Don't worry, we got your back!</p>
+      <!-- responsive map -->
+      <div>
         <div class="container">
-            <p class="greetings"></p>
-            <p class="weather"></p>
+          <div class="row">
+            <div class="col-12 p-0" >
+              <div class="embed-responsive embed-responsive-16by9 " >
+                <iframe src="https://data.gov.sg/dataset/traffic-images/resource/e127e29a-bd48-47e2-a0a7-e89ce31f10c7/view/39ba8de0-6242-40d3-8664-793316c47b09" > </iframe>       
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <!-- Features -->
-      <div class="container ">
-
-        <!-- Reminders -->
-        <div class="row text-center" id="reminder" style="padding: 200px 0;">
-          <div class="col-lg-6 d-flex align-items-center justify-content-center">
-            <div class="col-lg-12">
-              <h2>Reminders</h2>
-              <p class="show-today"> </p>
-              <table class="show-all"><tr><th>Time</th><th>Reminders</th></tr></table>
-              <form id="addForm" style="display: none;">
-                <div class="row">
-                <div class="form-group col-6 pt-2">
-                    <input class="form-control" type="date"  id="dateInput">
-                </div>
-                <div class="form-group col-6 pt-2">
-                  <input class="form-control" type="time"  id="timeInput">
-                </div>
-              </div>
+    </div>
+    <!-- traffic incident and carpark slots -->
+    <div class="row">
+      <!-- Traffic Incident -->
+      <div class="col-lg-6  d-flex align-items-center justify-content-center" style="padding: 0px 0px 200px 0px;">
+        <div class="col text-center" id="traffic-incident">
+          <!-- title -->
+          <h2>Traffic Incidents</h2>
+          <p>Remember to check incidents currently happening on the road before heading out!</p>
+          <!-- link to go to incident page -->
+          <a href="traffic-incident.html" >click here for more</a>
+          <!-- roadwork image -->
+          <div>
+            <img src="images/traffic-incident.jpg" class="img-fluid" alt="roadwork image" style="padding-top: 20px;">
+          </div>
+        </div>
+      </div>
+      <!-- Carpark Slots -->
+      <div class="col-lg-6  d-flex align-items-center justify-content-center" style="padding: 0px 0px 200px 0px;">
+        <div class="col text-center" id="carpark">
+          <!-- title -->
+          <h2>Carpark Slots</h2>
+          <p>Psst.. We know how many parking slots are left in your area! </p>
+          <!-- user input for carpark number  -->
+          <form>
+            <div class="form-group">
               <div class="row">
-                <div class="form-group col-12">
-                    <input type="text" class="form-control" id="reminderInput" placeholder="Brunch @Starbucks">
+                <div class="col-3">
+                </div>
+                <div class="col-5">
+                  <input type="text" class="form-control" id="carParkNoInput" placeholder="HLM">
+                </div>
+                <div class="col-1">
+                  <button type="submit" class="btn btn1 btn-primary">Search</button>  
+                </div>
+                <div class="col-3">
                 </div>
               </div>
-              <button type="submit" class="btn btn3 btn-primary" >Save</button>
-              </form>
-              <form class="py-2">
-                <button type="submit" class="btn btn2 btn-primary">
-                  set reminders
-                </button>
-                <button type="submit" class="btn btn4 btn-primary">
-                  show all reminders
-                </button>
-              </form>  
-            </div>
+            </div>  
+          </form>
+          <!-- displaying how many slots left after user input -->
+          <div id="display" style="padding-bottom: 5px;">Parking Slots Left:</div>
+          <!-- parking image -->
+          <div>
+            <img src="images/parking.jpg" class="img-fluid" alt="parking image">
           </div>
-          <div class="col-lg-6 d-flex align-items-center justify-content-center">
-            <img src="images/friends.jpg" class="img-fluid" alt="">
-          </div>
-        </div>
-
-        <!-- Traffic images -->
-          <div class="col text-center" id="traffic-image" style="padding: 0px 0px 200px 0px;">
-            <h2>Traffic Image</h2>
-            <p>Traffic in Singapore can be stressful. Don't worry, we got your back!</p>
-            <div>
-              <div class="container">
-                <div class="row">
-                  <div class="col-1 p-0">
-                  </div>
-                  <div class="col-10 p-0" >
-                    <div class="embed-responsive embed-responsive-16by9 " >
-                      <iframe src="https://data.gov.sg/dataset/traffic-images/resource/e127e29a-bd48-47e2-a0a7-e89ce31f10c7/view/39ba8de0-6242-40d3-8664-793316c47b09" > </iframe>       
-                    </div>
-                  </div>
-                  <div class="col-1 p-0">
-                  </div>  
-                </div>
-              </div>
-            </div>
-          </div>
-
-        <div class="row">
-          <div class="col-lg-6  d-flex align-items-center justify-content-center" style="padding: 0px 0px 200px 0px;">
-              <!-- Traffic Incident -->
-              <div class="col text-center" id="traffic-incident">
-                <h2>Traffic Incidents</h2>
-                <p>Remember to check incidents currently happening on the road before heading out!</p>
-                <a href="traffic-incident.html" >click here for more</a>
-                <div>
-                  <img src="images/traffic-incident.jpg" class="img-fluid" alt="" style="padding-top: 20px;">
-                </div>
-              </div>
-          </div>
-          <div class="col-lg-6  d-flex align-items-center justify-content-center" style="padding: 0px 0px 200px 0px;">
-              <!-- Carpark Slots -->
-              <div class="col text-center" id="carpark">
-                <h2>Carpark Slots</h2>
-                <p>Psst.. We know how many parking slots are left in your area! </p>
-                <div class="container">
-                  <form>
-                    <div class="form-group">
-                      <div class="row">
-                          <div class="col-4">
-                          </div>
-                          <div class="col-3">
-                            <input type="text" class="form-control" id="carParkNoInput" placeholder="HLM">
-                          </div>
-                          <div class="col-1">
-                            <button type="submit" class="btn btn1 btn-primary">Search</button>  
-                          </div>
-                          <div class="col-4">
-                          </div>
-                      </div>
-                    </div>  
-                  </form>
-                </div>
-                <div id="display" style="padding-bottom: 5px;">
-                  Parking Slots Left:
-                </div>
-                <div>
-                  <img src="images/parking.jpg" class="img-fluid" alt="">
-                </div>
-            </div>    
-          </div>
-        </div>
+        </div>    
       </div>
+    </div>
+  </div>
 
-      <div class="container px-0">
-        <div class="container px-0">
+  <!-- footer -->
+  <div class="container px-0">
+    <div class="container px-0">
       <footer class="d-flex align-items-center justify-content-center" style="background-color: beige;">
         <div class="container">
           <div class="row my-5 px-0" >
+            <!-- application description + personal info: linkedin, instagram, github -->
             <div class="col-6">
               Drive Safe <br>
               Singapore <br> <br>
               By: Balqis Kinanti <br>
               Follow me <br> <br>
-              <a href="https://www.linkedin.com/in/balqiskinanti02/" target="_blank"><img src="images/linkedin.svg" alt="" width="32" height="32" title="Bootstrap"></a> 
-              <a href="https://www.instagram.com/balqis.kinanti/" target="_blank"><img src="images/instagram.svg" alt="" width="32" height="32" title="Bootstrap"></a> 
-              <a href="https://github.com/Balqiskinanti" target="_blank"><img src="images/github.svg" alt="" width="32" height="32" title="Bootstrap"></a>
+              <a href="https://www.linkedin.com/in/balqiskinanti02/" target="_blank"><img src="images/linkedin.svg" alt="linkedin logo" width="32" height="32" title="linkedin"></a> 
+              <a href="https://www.instagram.com/balqis.kinanti/" target="_blank"><img src="images/instagram.svg" alt="instagram logo" width="32" height="32" title="instagram"></a> 
+              <a href="https://github.com/Balqiskinanti" target="_blank"><img src="images/github.svg" alt="github logo" width="32" height="32" title="github"></a>
             </div>
-            <div class="col-3 text-center">
-             <b>Developer</b>  <br> <br>
-             <a href="https://github.com/Balqiskinanti/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/blob/main/README.md" target="_blank" style="color: black;">Github</a> <br>
-             <a href="#" target="_blank" style="color: black;">API Links</a> 
+            <!-- links for api + github reference  -->
+            <div class="col-3">
+              <b>Developer</b>  <br> <br>
+              <a href="https://github.com/Balqiskinanti/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website" target="_blank" style="color: black;">Github</a> <br>
+              <a href="https://github.com/Balqiskinanti/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/blob/main/README.md#credits" target="_blank" style="color: black;">API Links</a> 
             </div>
-            <div class="col-3 text-center" id="contact">
+            <!-- contact/feedback link -->
+            <div class="col-3" id="contact">
               <b>Feedback</b> <br> <br>
               <address>
                 <a href="mailto:balqiskinanti02@gmail.com" style="color: black;">Email</a>
               </address>
             </div>
           </div>
+          <!-- application's nam -->
           <div class="row my-5">
-            <div class="col-12 text-center " style="font-size: 1rem;">
-              &copy; Drive Safe 2020
-            </div>
+            <div class="col-12 text-center " style="font-size: 1rem;">&copy; Drive Safe 2020</div>
           </div>
         </div>          
       </footer>
-        </div>
-      </div>
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>  
-      <script src="js/main-page-script.js"></script>
-    </body>
+    </div>
+  </div>
+  <!-- script links -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>  
+  <script src="js/main-page-script.js"></script>
+</body>
 </html>
