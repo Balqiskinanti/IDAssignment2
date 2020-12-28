@@ -2,6 +2,12 @@
 $(document).ready(function () {
     // if button is clicked
     $(".btn").click(function (e) {
+        // get the input for all fields in the form
+        var getName = $("#nameInput").val();
+        var getMail = $("#mailInput").val();
+        var getPassword = $("#passwordInput").val();
+        var getAddress= $("#addressInput").val();
+
         // call weather API 
         $.ajax({
             type:"GET",
@@ -14,7 +20,7 @@ $(document).ready(function () {
             },
             success:function(data){
                 address=0;
-                for (u = 0; u < data.items[0].forecasts.length; u++){
+                for (var u = 0; u < data.items[0].forecasts.length; u++){
                     if (getAddress == data.items[0].forecasts[u].area){
                         address=1;
                         break;
@@ -27,15 +33,10 @@ $(document).ready(function () {
         });
         e.preventDefault();
 
-        // get the input for all fields in the form
-        getName = $("#nameInput").val();
-        getMail = $("#mailInput").val();
-        getPassword = $("#passwordInput").val();
-        getAddress= $("#addressInput").val();
         // if there's already a signup in storage, parse it. 
         // if not, make count = 0 (to check if count>0, loop and see if email is already taken)
         if (localStorage.getItem('signUp')) {
-            signUpArray = JSON.parse(localStorage.getItem("signUp"));
+            var signUpArray = JSON.parse(localStorage.getItem("signUp"));
             count=signUpArray.length;
         }else{
             count=0;
@@ -58,10 +59,10 @@ $(document).ready(function () {
                 if (response.Valid == true){
                     // error checking 3: password must be 8 characters or more
                     if(getPassword.length>=8){
-                        flag = 1;
+                        var flag = 1;
                         //error checking 4: user to input a uniqe email address everytime they sign up.
                         if (count>0){
-                            for (i = 0; i < signUpArray.length; i++) {
+                            for (var i = 0; i < signUpArray.length; i++) {
                                 if(signUpArray[i].email == getMail){
                                     alert("email taken");
                                     flag =0;

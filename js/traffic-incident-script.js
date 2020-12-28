@@ -1,7 +1,5 @@
 // jshint esversion:6
 $(document).ready(function(){
-    var params = {
-    };
     // call API for traffic incidents
     $.ajax({
         type:"GET",
@@ -16,7 +14,7 @@ $(document).ready(function(){
         success:function(data){
             // appending the incident message in the respective types
             var dataArray =[];
-            for (i = 0; i < data.value.length; i++) {
+            for (var i = 0; i < data.value.length; i++) {
                 dataArray.push(data.value[i].Message);
                 if(data.value[i].Type == "Accident"){
                     $(".accident").append("<br>"+data.value[i].Message).show();
@@ -42,7 +40,7 @@ $(document).ready(function(){
             }
             // search function 
             // get user input for area
-            getTrafficIncidentsInput = $("#trafficIncidentsInput").val();
+            var getTrafficIncidentsInput = $("#trafficIncidentsInput").val();
     
             $("#trafficIncidentsInput").change(function (){
                 getTrafficIncidentsInput = $("#trafficIncidentsInput").val();

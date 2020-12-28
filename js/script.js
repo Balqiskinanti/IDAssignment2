@@ -1,7 +1,7 @@
 // jshint esversion:6
 $(document).ready(function (e) {
     // parse signup json to loop and check if user has sign up
-    signUpArray = JSON.parse(localStorage.getItem("signUp"));
+    var signUpArray = JSON.parse(localStorage.getItem("signUp"));
     // get user input
     var getMail = $("#mailInput").val();
     var getPassword = $("#passwordInput").val();
@@ -15,13 +15,13 @@ $(document).ready(function (e) {
     });
 
     $("#btn").click(function (e) {
-        flag = false;
+        var flag = false;
         // loop sign up array to check if user sign up
         if(signUpArray == null){
             e.preventDefault();
             alert("please sign up");
         }else{
-            for (i = 0; i < signUpArray.length; i++) {
+            for (var i = 0; i < signUpArray.length; i++) {
                 // error checking 1: user to login with matching username and password as the one they've sign up
                 // pass error checking. add to local storage
                 if (signUpArray[i].email == getMail && signUpArray[i].password == getPassword){

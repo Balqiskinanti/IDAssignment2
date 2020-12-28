@@ -8,8 +8,6 @@ $(document).ready(function(){
     var hours = d.getHours();
     var minutes = d.getMinutes();
     var seconds = d.getSeconds();
-    var params = {
-    };
     // API for weather
     $.ajax({
         type:"GET",
@@ -25,9 +23,9 @@ $(document).ready(function(){
             // loop to see if user's input on home address area = API's data on location
             // check if time is morning, afternoon, evening or night
             // add message greetings and weather to html 
-            loginArray = JSON.parse(localStorage.getItem("login"));
-            for (i = 0; i < loginArray.length; i++) {
-                for (u = 0; u < data.items[0].forecasts.length; u++){
+            var loginArray = JSON.parse(localStorage.getItem("login"));
+            for (var i = 0; i < loginArray.length; i++) {
+                for (var u = 0; u < data.items[0].forecasts.length; u++){
                     if (loginArray[i].address == data.items[0].forecasts[u].area){
                         var forecast = data.items[0].forecasts[0].forecast;
                         if(hours<12){
@@ -69,7 +67,7 @@ $(document).ready(function(){
         "headers": {
         },
     };
-    getCarParkNo = $("#carParkNoInput").val();
+    var getCarParkNo = $("#carParkNoInput").val();
 
     $("#carParkNoInput").change(function (){
         getCarParkNo = $("#carParkNoInput").val();
@@ -82,13 +80,12 @@ $(document).ready(function(){
     $(".btn1").click(function(e){
         e.preventDefault();
         $.ajax(settings).done(function (response) {
-            getCarpark= response.items[0].carpark_data;
-            for (i = 0; i < getCarpark.length; i++) {
+            var getCarpark= response.items[0].carpark_data;
+            for (var i = 0; i < getCarpark.length; i++) {
                 flag=0;
                 if (getCarParkNo == getCarpark[i].carpark_number){
-                    carParkNo = getCarpark[i].carpark_number;
-                    numberOfLots= getCarpark[i].carpark_info[0].lots_available;
-                    typeOfLots = getCarpark[i].carpark_info[0].lot_type;
+                    var numberOfLots= getCarpark[i].carpark_info[0].lots_available;
+                    var typeOfLots = getCarpark[i].carpark_info[0].lot_type;
                     $("#display").append(` ${numberOfLots} in type ${typeOfLots}`);
                     flag=1;
                     break;
@@ -99,7 +96,7 @@ $(document).ready(function(){
             }
         }).fail(function(response){
                 alert("Oh no! The server is experiencing some issues. Try refreshing the page again after 30 mins ,Thank you :)");
-            })
+            });
     });
 
     // if button for add new reminder is clicked
@@ -127,9 +124,8 @@ $(document).ready(function(){
             } catch (error) {
                 alert("please fill in the date and time input");
             }
-            savedDataArray = JSON.parse(localStorage.getItem("savedData"));
-            loginArray = JSON.parse(localStorage.getItem("login"));
-            u = savedDataArray.length-1;
+            var savedDataArray = JSON.parse(localStorage.getItem("savedData"));
+            var u = savedDataArray.length-1;
             //check if there is any time and reminder in savedData already
             // if yes, get that
             // if not, initialise as empty array
@@ -162,19 +158,19 @@ $(document).ready(function(){
             }
         });
     });
-    dateStr = year+"-"+month+"-"+date;
-    savedDataArray = JSON.parse(localStorage.getItem("savedData"));
-    loginArray = JSON.parse(localStorage.getItem("login"));
+    var dateStr = year+"-"+month+"-"+date;
+    var savedDataArray = JSON.parse(localStorage.getItem("savedData"));
+    var loginArray = JSON.parse(localStorage.getItem("login"));
     // if button to show all reminder is clicked  
     $(".btn4").click(function(e){
         e.preventDefault();
-        for (i = 0; i < savedDataArray.length; i++) {
+        for (var i = 0; i < savedDataArray.length; i++) {
             if(savedDataArray[i].time == null){
                 continue;
             }else{
-                for (u=0; u<savedDataArray[i].time.length; u++){
+                for (var u=0; u<savedDataArray[i].time.length; u++){
                     if(savedDataArray[i].name == loginArray[0].name){
-                        time = savedDataArray[i].time[u].replace("T"," ");
+                        var time = savedDataArray[i].time[u].replace("T"," ");
                         $(".show-all").append(`<tr><th> ${time}</th> <th> ${savedDataArray[i].reminder[u]}</th></tr>`);
                     }
                 }
@@ -183,14 +179,14 @@ $(document).ready(function(){
     });
     // append to html if there's any reminder today 
     // by comparing it with today's date
-    for (i = 0; i < savedDataArray.length; i++) {
+    for (var i = 0; i < savedDataArray.length; i++) {
         if(savedDataArray[i].time == null){
             continue;
         }else{
-        for (u=0; u<savedDataArray[i].time.length; u++){
+        for (var u=0; u<savedDataArray[i].time.length; u++){
             if(savedDataArray[i].name == loginArray[0].name){
                 if(savedDataArray[i].time[u].substring(0,10) == dateStr){
-                    time = savedDataArray[i].time[u].replace("T"," ");
+                    var time = savedDataArray[i].time[u].replace("T"," ");
                     $(".show-today").append(` <br> ${time.substring(11,16)}  ${savedDataArray[i].reminder[u]}`);
                 }
             }
