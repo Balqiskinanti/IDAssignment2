@@ -90,10 +90,10 @@ $(document).ready(function () {
                                 alert("we cant find the address.");
                             }
                         }else{
-                            alert("Password must be at least 8 characters long");
+                            alert("Invalid mail");
                         }
                     }else{
-                        alert("Invalid mail");
+                        alert("Password must be at least 8 characters long");
                     }
                 }
             }   
