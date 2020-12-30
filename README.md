@@ -63,6 +63,7 @@ My XD Wireframe :art: :
    * [pinterest](https://www.pinterest.com/)
 2. The SVGs in the footer were from
    * [iconfinder](www.iconfinder.com)
+   * [flaticon](https://www.flaticon.com/)
   
 #### Acknowledgements :sun_with_face:
 1. I received inspiration from this [website](https://www.grab.com/sg/)
@@ -71,6 +72,7 @@ My XD Wireframe :art: :
    * [Stack Overflow](https://stackoverflow.com/)
    * [freecodecamp](www.freecodecamp.org)
    * [geeksforgeeks](www.geeksforgeeks.org)
+   * [codepen.io](https://codepen.io/)
 
 #### APIs Used :sun_with_face:
 * [Data.gov.sg](https://data.gov.sg/dataset/)
