@@ -86,7 +86,7 @@ $(document).ready(function(){
                 if (getCarParkNo == getCarpark[i].carpark_number){
                     var numberOfLots= getCarpark[i].carpark_info[0].lots_available;
                     var typeOfLots = getCarpark[i].carpark_info[0].lot_type;
-                    $("#display").append(` ${numberOfLots} in type ${typeOfLots}`);
+                    $("#display").html(` Parking slots left: <mark> ${numberOfLots} of type ${typeOfLots} <mark>`);
                     flag=1;
                     break;
                 }
@@ -168,10 +168,11 @@ $(document).ready(function(){
             if(savedDataArray[i].time == null){
                 continue;
             }else{
+                $(".show-all").append(`<tr><th colspan=2> All Reminders </th></tr>`);
                 for (var u=0; u<savedDataArray[i].time.length; u++){
                     if(savedDataArray[i].name == loginArray[0].name){
                         var time = savedDataArray[i].time[u].replace("T"," ");
-                        $(".show-all").append(`<tr><th> ${time}</th> <th> ${savedDataArray[i].reminder[u]}</th></tr>`);
+                        $(".show-all").append(`<tr><td> ${time}</td> <td> ${savedDataArray[i].reminder[u]}</td></tr>`);
                     }
                 }
             }
@@ -187,7 +188,7 @@ $(document).ready(function(){
             if(savedDataArray[i].name == loginArray[0].name){
                 if(savedDataArray[i].time[u].substring(0,10) == dateStr){
                     var time = savedDataArray[i].time[u].replace("T"," ");
-                    $(".show-today").append(` <br> ${time.substring(11,16)}  ${savedDataArray[i].reminder[u]}`);
+                    $(".show-today").append(` <br><mark> ${time.substring(11,16)}</mark>  ${savedDataArray[i].reminder[u]}<br>`);
                 }
             }
         }
