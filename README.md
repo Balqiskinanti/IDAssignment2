@@ -56,6 +56,11 @@ My XD Wireframe :art: :
 
 ### Testing
 :pushpin: How my project looks :
+![web image desktop](https://github.com/Balqiskinanti/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/blob/main/images/login-signup-screenshot.png)
+![web image desktop](https://github.com/Balqiskinanti/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/blob/main/images/main-page-screenshot.png)
+![web image desktop](https://github.com/Balqiskinanti/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/blob/main/images/traffic-incident-screenshot.png)
+
+The difference for mobile version is that all rows that have multiple columns will be brought down, so there will only be one column in mobile view. 
 
 ### Credits
 #### Media :link: 
