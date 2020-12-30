@@ -10,14 +10,14 @@
 </head>
 <body>
   <!-- Navigation  bar-->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light " style="background-color: rgb(250,250,251);box-shadow: 2px 2px 2px darkgrey;">
     <!-- logo -->
     <a class="navbar-brand" href="main-page.html">Drive Safe</a>
     <!-- hamburger icon button for when screen size is small -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse nav" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <!-- contact -->
         <li class="nav-item">
@@ -34,7 +34,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#reminder">Reminders</a>
-            <a class="dropdown-item" href="#carpark">Carpark Slots</a>
+            <a class="dropdown-item" href="#carparkInput">Carpark Slots</a>
             <a class="dropdown-item" href="#traffic-image">Traffic Images</a>
             <a class="dropdown-item" href="#traffic-incident">Traffic Incidents</a>
           </div>
@@ -44,10 +44,11 @@
   </nav>
   <!--Greetings  -->
   <header>
-    <div class="container d-flex align-items-center flex-row content" style="height:100vh;">
-      <div class="container">
+    <div class=" d-flex align-items-center flex-row content" style="height:100vh;">
+      <div class="container m-0" style="color: rgb(231, 231, 231); ">
         <p class="greetings"></p>
         <p class="weather"></p>
+        <p> <img src="images/circle.png" alt=""> <a class= "reminderLink" href="#reminder" style="color: white; "> Remember where you're supposed to be. Click here</a></p>
       </div>
     </div>
   </header>
@@ -56,6 +57,12 @@
   2. traffic images
   3. traffic incidents
   4. carpark slots-->
+  <div class=" d-flex align-items-center flex-row" style="height:100vh;background-color:rgb(245,245,245); ">
+    <div class="container m-0">
+      <p class="font-big"><b>We know how <mark style="padding: .1em;background-color:rgb(44,127,193) ;color: white;">busy</mark> you are, but <mark style="padding: .1em;background-color:rgb(44,127,193) ;color: white;">traffic</mark> can't wait.</b> </p>
+      <p class="font-small">Plan your events ahead and peek at the traffic with just a click away!</p>
+    </div>
+  </div>
   <div class="container ">
     <!-- Reminders -->
     <div class="row text-center" id="reminder" style="padding: 200px 0;">
@@ -72,14 +79,14 @@
               b. show all reminders
       2. picture -->
       <!-- 1 -->
-      <div class="col-lg-6 d-flex align-items-center justify-content-center">
+      <div class="col-lg-6 d-flex align-items-center justify-content-center" >
         <div class="col-lg-12">
           <!-- 1 i) -->
-          <h2>Reminders</h2>
+          <h2>Today's Reminders</h2>
           <!-- 1 ii) -->
           <p class="show-today"> </p>
           <!-- 1 iii) -->
-          <table class="show-all"><tr><th>Time</th><th>Reminders</th></tr></table>
+          <table class="show-all"></table>
           <!-- 1 iv) a form-->
           <form id="addForm" style="display: none;">
             <div class="row">
@@ -103,10 +110,10 @@
           </form>
           <!-- 1 iv) buttons-->
           <form class="py-2">
-            <button type="submit" class="btn btn2 btn-primary">
+            <button type="submit" class="btn btn2 btn-primary" style="margin-bottom: 10px;">
               set reminders
             </button>
-            <button type="submit" class="btn btn4 btn-primary">
+            <button type="submit" class="btn btn4 btn-primary" style="margin-bottom: 10px;">
               show all reminders
             </button>
           </form>  
@@ -116,11 +123,16 @@
         <img src="images/friends.jpg" class="img-fluid" alt="friends taking picture">
       </div>
     </div>
+  </div>
+  <div class=" d-flex align-items-center flex-row" style="height:100vh;background-color:rgb(231, 192, 222); ">
+    <div class="container m-0">
+      <p class="font-big"><b>Happiness is when there's no jam on the road</b></p>
+      <p class="font-small">Thanks to our interactive map, you can plan your route better.</p>
+    </div>
+  </div>
+  <div class="container">
     <!-- Traffic images: responsive map with traffic image -->
-    <div class="col text-center" id="traffic-image" style="padding: 0px 0px 200px 0px;">
-      <!-- title -->
-      <h2>Traffic Image</h2>
-      <p>Traffic in Singapore can be stressful. Don't worry, we got your back!</p>
+    <div class="col text-center" id="traffic-image" style="padding: 200px 0px 200px 0px;">
       <!-- responsive map -->
       <div>
         <div class="container">
@@ -134,94 +146,103 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class=" d-flex align-items-center flex-row" style="height:100vh;background-color:rgb(245,245,245); ">
+    <div class="container m-0">
+      <p class="font-big"><b>Just tell us where you are, we'll do the <mark style="padding: .1em;background-color:rgb(44,127,193) ;color: white;">searching</mark> for you</b> </p>
+      <!-- <p class="font-small"></p> -->
+    </div>
+  </div>
+  <div class="container px-4">
     <!-- traffic incident and carpark slots -->
     <div class="row">
       <!-- Traffic Incident -->
-      <div class="col-lg-6  d-flex align-items-center justify-content-center" style="padding: 0px 0px 200px 0px;">
-        <div class="col text-center" id="traffic-incident">
+      <div class="col-lg-6" style="padding: 200px 0px 200px 0px;">
+        <div class="col " id="traffic-incident">
+          <!-- roadwork image -->
+          <div>
+            <img src="images/under-construction.png" class="img-fluid" alt="roadwork image" style="height:auto; width:50px;">
+          </div>
           <!-- title -->
-          <h2>Traffic Incidents</h2>
+          <h2 class="pt-3">Traffic Incidents</h2>
           <p>Remember to check incidents currently happening on the road before heading out!</p>
           <!-- link to go to incident page -->
           <a href="traffic-incident.html" >click here for more</a>
-          <!-- roadwork image -->
-          <div>
-            <img src="images/traffic-incident.jpg" class="img-fluid" alt="roadwork image" style="padding-top: 20px;">
-          </div>
         </div>
       </div>
       <!-- Carpark Slots -->
-      <div class="col-lg-6  d-flex align-items-center justify-content-center" style="padding: 0px 0px 200px 0px;">
-        <div class="col text-center" id="carpark">
-          <!-- title -->
-          <h2>Carpark Slots</h2>
-          <p>Psst.. We know how many parking slots are left in your area! </p>
-          <!-- user input for carpark number  -->
-          <form>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-3">
-                </div>
-                <div class="col-5">
-                  <input type="text" class="form-control" id="carParkNoInput" placeholder="HLM">
-                </div>
-                <div class="col-1">
-                  <button type="submit" class="btn btn1 btn-primary">Search</button>  
-                </div>
-                <div class="col-3">
-                </div>
-              </div>
-            </div>  
-          </form>
-          <!-- displaying how many slots left after user input -->
-          <div id="display" style="padding-bottom: 5px;">Parking Slots Left:</div>
+      <div class="col-lg-6" style="padding: 200px 0px 200px 0px;">
+        <div class="col " id="carpark">
           <!-- parking image -->
           <div>
-            <img src="images/parking.jpg" class="img-fluid" alt="parking image">
+            <img src="images/parking.png" class="img-fluid" alt="parking image" style="height:auto; width:50px;">
           </div>
+          <!-- title -->
+          <h2 class="pt-3">Carpark Slots</h2>
+          <p>Psst.. you can key in a carpark ID and we'll tell you how many parkings are left. </p>
+          <a href="#carparkInput" >click here for more</a>
         </div>    
       </div>
     </div>
   </div>
-
-  <!-- footer -->
-  <div class="container px-0">
-    <div class="container px-0">
-      <footer class="d-flex align-items-center justify-content-center" style="background-color: beige;">
-        <div class="container">
-          <div class="row my-5 px-0" >
-            <!-- application description + personal info: linkedin, instagram, github -->
-            <div class="col-6">
-              Drive Safe <br>
-              Singapore <br> <br>
-              By: Balqis Kinanti <br>
-              Follow me <br> <br>
-              <a href="https://www.linkedin.com/in/balqiskinanti02/" target="_blank"><img src="images/linkedin.svg" alt="linkedin logo" width="32" height="32" title="linkedin"></a> 
-              <a href="https://www.instagram.com/balqis.kinanti/" target="_blank"><img src="images/instagram.svg" alt="instagram logo" width="32" height="32" title="instagram"></a> 
-              <a href="https://github.com/Balqiskinanti" target="_blank"><img src="images/github.svg" alt="github logo" width="32" height="32" title="github"></a>
+  <div class="container" id="carparkInput" style="padding: 100px 0px 100px 0px;">
+    <!-- user input for carpark number  -->
+    <div class="container">
+      <h2 class="pb-3">Carpark Slots</h2>
+      <form >
+        <div class="form-group">
+          <div class="row">
+            <div class="col-8">
+              <input type="text" class="form-control" id="carParkNoInput" placeholder="HLM">
             </div>
-            <!-- links for api + github reference  -->
-            <div class="col-3">
-              <b>Developer</b>  <br> <br>
-              <a href="https://github.com/Balqiskinanti/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website" target="_blank" style="color: black;">Github</a> <br>
-              <a href="https://github.com/Balqiskinanti/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/blob/main/README.md#credits" target="_blank" style="color: black;">API Links</a> 
-            </div>
-            <!-- contact/feedback link -->
-            <div class="col-3" id="contact">
-              <b>Feedback</b> <br> <br>
-              <address>
-                <a href="mailto:balqiskinanti02@gmail.com" style="color: black;">Email</a>
-              </address>
+            <div class="col-4">
+              <button type="submit" class="btn btn1 btn-primary">Search</button>  
             </div>
           </div>
-          <!-- application's nam -->
-          <div class="row my-5">
-            <div class="col-12 text-center " style="font-size: 1rem;">&copy; Drive Safe 2020</div>
-          </div>
-        </div>          
-      </footer>
+        </div>  
+        <div id="display" style="padding-bottom: 5px;"></div>
+      </form>  
     </div>
   </div>
+  <div class=" d-flex align-items-center flex-row" style=" height:400px; background-color:rgb(245,245,245); ">
+    <div class="container m-0">
+      <p class="font-big"> <a style="color: black;" href="mailto:balqiskinanti02@gmail.com">Any Feedbacks? Tell us here <img src="images/right-arrow.png" alt="" style="height: auto; width: 50px;"></a> </p>
+    </div>
+  </div>
+  <!-- footer -->
+  <footer class="d-flex align-items-center justify-content-center" style="background-color: rgb(44,127,193); color: white;">
+    <div class="container">
+      <div class="row my-5 px-0">
+        <!-- application description + personal info: linkedin, instagram, github -->
+        <div class="col-6">
+          Drive Safe <br>
+          Singapore <br> <br>
+          By: Balqis Kinanti <br>
+          Follow me <br> <br>
+          <a href="https://www.linkedin.com/in/balqiskinanti02/" target="_blank"><img src="images/linkedin-white.svg" alt="linkedin logo" width="32" height="32" title="linkedin"></a> 
+          <a href="https://www.instagram.com/balqis.kinanti/" target="_blank"><img src="images/instagram-white.svg" alt="instagram logo" width="32" height="32" title="instagram"></a> 
+          <a href="https://github.com/Balqiskinanti" target="_blank"><img src="images/github-white.svg" alt="github logo" width="32" height="32" title="github"></a>
+        </div>
+        <!-- links for api + github reference  -->
+        <div class="col-3">
+          <b>Developer</b>  <br> <br>
+          <a href="https://github.com/Balqiskinanti/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website" target="_blank" style="color: white;">Github</a> <br>
+          <a href="https://github.com/Balqiskinanti/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/blob/main/README.md#credits" target="_blank" style="color: white;">API Links</a> 
+        </div>
+        <!-- contact/feedback link -->
+        <div class="col-3" id="contact">
+          <b>Feedback</b> <br> <br>
+          <address>
+            <a href="mailto:balqiskinanti02@gmail.com" style="color: white;">Email</a>
+          </address>
+        </div>
+      </div>
+      <!-- application's nam -->
+      <div class="row my-5">
+        <div class="col-12 text-center " style="font-size: 1rem;">&copy; Drive Safe 2021</div>
+      </div>
+    </div>          
+  </footer>
   <!-- script links -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
