@@ -15,7 +15,7 @@ $(document).ready(function(){
             // appending the incident message in the respective types
             var dataArray =[];
             for (var i = 0; i < data.value.length; i++) {
-                var msg = data.value[i].Message
+                var msg = data.value[i].Message;
                 dataArray.push(msg);
                 if(data.value[i].Type == "Accident"){
                     $(".accident").append("<br>"+msg.substring(7,msg.length)).show();
