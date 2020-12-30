@@ -5,14 +5,33 @@
 }
 /* style bg color */
 .content{
-    background-color: bisque;
+    background-color: rgb(44,127,193);
 }
 /* style font size */
 .greetings{
-    font-size: 4rem;
+    font-size: 3rem;
 }
 .weather{
     font-size: 2rem;
+}
+.reminderLink{
+    display: inline-block;
+    border-bottom: 1px solid rgb(236, 220, 220);
+    font-size: 18px;
+}
+.reminderLink::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    transition: width .3s;
+}
+.reminderLink:hover::after{
+    width: 100%;
+}
+.reminderLink:hover{
+    text-decoration: none;
 }
 /* style table */
 table {
@@ -27,24 +46,33 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+.font-big{
+    font-size: 2rem;
+}
+.font-small{
+    font-size: 1rem;
+}
+footer{
+    font-size: 12px;
+}
 /* media queries */
-@media (min-width: 1200px){
-    .container, .container-lg, .container-md, .container-sm, .container-xl {
-        max-width: 540px;
-    }
-}
-@media(min-width: 992px){
-    .container, .container-lg, .container-md, .container-sm, .container-xl {
-        max-width: 720px;
-    }
-}
 @media(min-width: 768px){
-    .container, .container-lg, .container-md, .container-sm, .container-xl {
-        max-width: 960px;
+    /* style font size */
+    .greetings{
+        font-size: 5rem;
+    }
+    .weather{
+        font-size: 2rem;
+    }
+    .font-big{
+        font-size: 3rem;
+    }
+    .font-small{
+        font-size: 2rem;
     }
 }
 @media(min-width: 576px){
-    .container, .container-lg, .container-md, .container-sm, .container-xl {
-        max-width: 2000px;
+    footer{
+        font-size: 15px;
     }
 }

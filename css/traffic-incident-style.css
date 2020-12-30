@@ -4,16 +4,19 @@
     margin: 0;
 }
 /* set font size  */
-.title{
-    font-size: 4vw;
+.title,
+h1{
+    font-size: 2rem;
 }
 /* add margin bottom every row */
 .row{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top:20px;
 }
 /* centering card title */
 .card-title{
     text-align: center;
+    font-weight: bold;
 }
 /* styling table */
 table {
@@ -28,24 +31,24 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+footer{
+    font-size: 12px;
+}
+.card{
+    box-shadow: 5px 5px 22px rgb(38 38 38 / 19%);
+}
 /* media queries */
-@media (min-width: 1200px){
-    .container, .container-lg, .container-md, .container-sm, .container-xl {
-        max-width: 540px;
-    }
-}
-@media(min-width: 992px){
-    .container, .container-lg, .container-md, .container-sm, .container-xl {
-        max-width: 720px;
-    }
-}
 @media(min-width: 768px){
-    .container, .container-lg, .container-md, .container-sm, .container-xl {
-        max-width: 960px;
+    /* style font size */
+    .title{
+        font-size: 4rem;
+    }
+    h1{
+        font-size: 3rem;
     }
 }
 @media(min-width: 576px){
-    .container, .container-lg, .container-md, .container-sm, .container-xl {
-        max-width: 2000px;
+    footer{
+        font-size: 15px;
     }
 }
