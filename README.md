@@ -10,14 +10,14 @@ This is a website for drivers to check condition on the road. It aims to be a al
 
 
 ### Design Process
-*UX*
+*UX* : 
 As a driver, I would want a platform where I can see my plans for the day and see the traffic condition without having to switch screens. This ensures that I will not miss any important events (meetings, dinner with family,etc) and be able to plan my timing way ahead based on the traffic condition and weather.
 
 This app is also customised for each individuals as they will be greeted on the landing page of the website with the time(morning, afternoon/evening/night), and also the weather at the place they have inputted during the sign up.
 
 Considering there are also very few apps that offer traffic information, it's also important for the website to be as informative and give as much needed and necessary data as possible. Yet, considering there might be overwhelming amount of data, the search function is also there to filter out the information for convinience. 
 
-*UI*
+*UI* : 
 I decided to go for a more simple colour scheme and font as it's a website that must cater to all individual's taste. I added colours at the header and footer on all pages for consistency. To spice it up, I made the placements of content different for each div so it does not get too repetitive and boring. 
 
 My XD Wireframe :art: :
