@@ -1,6 +1,7 @@
 // jshint esversion:6
 $(document).ready(function(){
     // call API for traffic incidents
+    // https://www.mytransport.sg/content/dam/datamall/datasets/LTA_DataMall_API_User_Guide.pdf
     $.ajax({
         type:"GET",
         dataType: 'json',
@@ -18,25 +19,25 @@ $(document).ready(function(){
                 var msg = data.value[i].Message;
                 dataArray.push(msg);
                 if(data.value[i].Type == "Accident"){
-                    $(".accident").append("<br>"+msg.substring(7,msg.length)).show();
+                    $(".accident").append("<br>"+msg).show();
                 }else if(data.value[i].Type == "Roadwork"){
-                    $(".roadwork").append("<br>"+msg.substring(7,msg.length)).show();
+                    $(".roadwork").append("<br>"+msg).show();
                 }else if(data.value[i].Type == "Vehicle breakdown"){
-                    $(".breakdown").append("<br>"+msg.substring(7,msg.length)).show();
+                    $(".breakdown").append("<br>"+msg).show();
                 }else if(data.value[i].Type == "Weather"){
-                    $(".weather").append("<br>"+msg.substring(7,msg.length)).show();
+                    $(".weather").append("<br>"+msg).show();
                 }else if(data.value[i].Type == "Obstacle"){
-                    $(".obstacle").append("<br>"+msg.substring(7,msg.length)).show();
+                    $(".obstacle").append("<br>"+msg).show();
                 }else if(data.value[i].Type == "Road Block"){
-                    $(".roadblock").append("<br>"+msg.substring(7,msg.length)).show();
+                    $(".roadblock").append("<br>"+msg).show();
                 }else if(data.value[i].Type == "Heavy Traffic"){
-                    $(".traffic").append("<br>"+msg.substring(7,msg.length)).show();
+                    $(".traffic").append("<br>"+msg).show();
                 }else if(data.value[i].Type == "Misc."){
-                    $(".misc").append("<br>"+msg.substring(7,msg.length)).show();
+                    $(".misc").append("<br>"+msg).show();
                 }else if(data.value[i].Type == "Diversion"){
-                    $(".diversion").append("<br>"+msg.substring(7,msg.length)).show();
+                    $(".diversion").append("<br>"+msg).show();
                 }else if(data.value[i].Type == "Unattended Vehicle"){
-                    $(".vehicle").append("<br>"+msg.substring(7,msg.length)).show();
+                    $(".vehicle").append("<br>"+msg).show();
                 }
             }
             // search function 

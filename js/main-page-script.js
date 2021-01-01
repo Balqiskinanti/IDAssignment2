@@ -9,6 +9,7 @@ $(document).ready(function(){
     var minutes = d.getMinutes();
     var seconds = d.getSeconds();
     // API for weather
+    // https://data.gov.sg/dataset
     $.ajax({
         type:"GET",
         dataType: 'json',
@@ -58,6 +59,7 @@ $(document).ready(function(){
     if (seconds<10){
         seconds = "0"+seconds;
     }
+    // https://data.gov.sg/dataset
     var dateTime = `${year}-${month}-${date}T${hours}%3A${minutes}%3A${seconds}`;
     var url = "https://api.data.gov.sg/v1/transport/carpark-availability?date_time="+dateTime;
     var settings = {
