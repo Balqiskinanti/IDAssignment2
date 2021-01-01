@@ -160,6 +160,13 @@ $(document).ready(function(){
             }
         });
     });
+    //change the datestr same format as datetime for the checking to work
+    if (month<10){
+        month = "0"+month;
+    }
+      if (date<10){
+        date = "0"+date;
+    }
     var dateStr = year+"-"+month+"-"+date;
     var savedDataArray = JSON.parse(localStorage.getItem("savedData"));
     var loginArray = JSON.parse(localStorage.getItem("login"));
