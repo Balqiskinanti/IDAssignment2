@@ -9,6 +9,7 @@ $(document).ready(function () {
         var getAddress= $("#addressInput").val();
 
         // call weather API 
+        //https://data.gov.sg/dataset
         $.ajax({
             type:"GET",
             dataType: 'json',
@@ -43,6 +44,7 @@ $(document).ready(function () {
         }
 
         // call API  to check if email is valid
+        // https://www.gmass.co/blog/email-verification-service/
         var settings = {
             "url": "https://verify.gmass.co/verify?email="+getMail+"&key=85df4d70-399f-473c-9c2e-5c8ac9114ed6",
             "method": "GET",
@@ -64,37 +66,37 @@ $(document).ready(function () {
                         if (count>0){
                             for (var i = 0; i < signUpArray.length; i++) {
                                 if(signUpArray[i].email == getMail){
-                                    alert("email taken");
                                     flag =0;
                                 }
                             }
                         }
-                        //check password length
                         if (flag==1){
                             //check address is in the weather API data for area
                             if(address==1){
-                            // pass all error checking. add to localstorage
-                            let s= new signUp(getName,getMail,getPassword,getAddress);
-                            let signUpArray =[];
+                                // pass all error checking. add to localstorage
+                                let s= new signUp(getName,getMail,getPassword,getAddress);
+                                let signUpArray =[];
 
-                            if (localStorage.getItem('signUp')) {
-                                signUpArray = JSON.parse(localStorage.getItem("signUp"));
-                            }
+                                if (localStorage.getItem('signUp')) {
+                                    signUpArray = JSON.parse(localStorage.getItem("signUp"));
+                                }
 
-                            signUpArray.push(s);
+                                signUpArray.push(s);
 
-                            localStorage["signUp"]=JSON.stringify(signUpArray);
-                            alert("Sign up successful. You can log in now");
-                            $("#myForm")[0].reset();
+                                localStorage["signUp"]=JSON.stringify(signUpArray);
+                                alert("Sign up successful. You can log in now");
+                                $("#myForm")[0].reset();
                             }else{
-                                alert("we cant find the address.");
+                                alert("We can't find the address");
                             }
                         }else{
-                            alert("Invalid mail");
+                            alert("email taken");
                         }
                     }else{
                         alert("Password must be at least 8 characters long");
                     }
+                }else{
+                    alert("invalid mail.");
                 }
             }   
         });
