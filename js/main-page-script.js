@@ -23,26 +23,31 @@ $(document).ready(function(){
             // get login array from localstorage
             // loop to see if user's input on home address area = API's data on location
             // check if time is morning, afternoon, evening or night
-            // add message greetings and weather to html 
-            var loginArray = JSON.parse(localStorage.getItem("login"));
-            for (var i = 0; i < loginArray.length; i++) {
-                for (var u = 0; u < data.items[0].forecasts.length; u++){
-                    if (loginArray[i].address == data.items[0].forecasts[u].area){
-                        var forecast = data.items[0].forecasts[0].forecast;
-                        if(hours<12){
-                            greetings = "Morning";
-                        }else if(hours <=16){
-                            greetings ="Afternoon";
-                        }else if(hours <=18){
-                            greetings = "Evening";
-                        }else{
-                            greetings ="Night";
+            // add message greetings and weather to html
+            if(hours<12){
+                greetings = "Morning";
+            }else if(hours <=16){
+                greetings ="Afternoon";
+            }else if(hours <=18){
+                greetings = "Evening";
+            }else{
+                greetings ="Night";
+            } 
+            try {
+                var loginArray = JSON.parse(localStorage.getItem("login"));
+                for (var i = 0; i < loginArray.length; i++) {
+                    for (var u = 0; u < data.items[0].forecasts.length; u++){
+                        if (loginArray[i].address == data.items[0].forecasts[u].area){
+                            var forecast = data.items[0].forecasts[0].forecast;
+                            $('.greetings').html(` <b> Good ${greetings} ${loginArray[i].name} </b>`);
+                            $('.weather').html(` ${loginArray[i].address} is ${forecast}`);
+                            break;
                         }
-                        $('.greetings').html(` <b> Good ${greetings} ${loginArray[i].name} </b>`);
-                        $('.weather').html(` ${loginArray[i].address} is ${forecast}`);
-                        break;
                     }
-                }
+                }    
+            } catch (error) {
+                $('.greetings').html(` <b> Good ${greetings} ${loginArray[i].name} </b>`);
+                alert("there's no data of the weather right now.\nTry refreshing again after 30 mins.");
             }
         },
         error:function(data){
@@ -58,6 +63,13 @@ $(document).ready(function(){
     }
     if (seconds<10){
         seconds = "0"+seconds;
+    }
+    //change the datestr same format as datetime for the checking to work
+    if (month<10){
+        month = "0"+month;
+    }
+      if (date<10){
+        date = "0"+date;
     }
     // https://data.gov.sg/dataset
     var dateTime = `${year}-${month}-${date}T${hours}%3A${minutes}%3A${seconds}`;
@@ -160,13 +172,6 @@ $(document).ready(function(){
             }
         });
     });
-    //change the datestr same format as datetime for the checking to work
-    if (month<10){
-        month = "0"+month;
-    }
-      if (date<10){
-        date = "0"+date;
-    }
     var dateStr = year+"-"+month+"-"+date;
     var savedDataArray = JSON.parse(localStorage.getItem("savedData"));
     var loginArray = JSON.parse(localStorage.getItem("login"));
