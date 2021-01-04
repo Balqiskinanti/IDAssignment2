@@ -77,7 +77,7 @@ $(document).ready(function(){
                     headers:{
                     },
                     data: {
-                        "date_time": "2020-12-18T23:00:00"
+                        "date_time": "2020-12-31T23:00:00"
                     },
                     success:function(data){
                         // get login array from localstorage
@@ -94,7 +94,7 @@ $(document).ready(function(){
                             greetings ="Night";
                         } 
                         var loginArray = JSON.parse(localStorage.getItem("login"));
-                        $('.showWeather').append(`<tr><th>Area </th> <th> Forecast</th></tr>`);
+                        // $('.showWeather').append(`<tr><th>Area </th> <th> Forecast</th></tr>`);
                         for (var u = 0; u < data.items[0].forecasts.length; u++){
                             var forecast = data.items[0].forecasts[u].forecast;
                             $('.showWeather').append(`<tr><td>${data.items[0].forecasts[u].area} </td> <td> ${forecast}</td></tr>`);
