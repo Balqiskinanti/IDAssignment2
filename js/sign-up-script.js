@@ -9,14 +9,31 @@ $(document).ready(function () {
         var getPassword = $("#passwordInput").val();
         var getAddress= $("#addressInput").val();
 
-        var addressArray = ["Ang Mo Kio", "Bedok","Bishan", "Boon Lay","Bukit Batok", "Bukit Merah", "Bukit Panjang", "Bukit Timah", "Central Water Catchment", "Changi", "Chua Chu Kang","Clementi",];
-        var address =0;
-        for (var i = 0; i < addressArray.length; i++) {
-            if(addressArray[i] == getAddress){
-                address =1;
-                break;
+        // call weather API 
+        //https://data.gov.sg/dataset
+        $.ajax({
+            type:"GET",
+            dataType: 'json',
+            contentType:"text/plain",
+            url:"https://api.data.gov.sg/v1/environment/2-hour-weather-forecast",
+            headers:{
+            },
+            data: {
+                "date_time": "2020-12-31T23:00:00"
+            },
+            success:function(data){
+                address=0;
+                for (var u = 0; u < data.items[0].forecasts.length; u++){
+                    if (getAddress == data.items[0].forecasts[u].area){
+                        address=1;
+                        break;
+                    }
+                }
+            },
+            error:function(data){
+                alert("Oh no! The server is experiencing some issues. Try refreshing the page again after 30 mins ,Thank you :)");
             }
-        }
+        });
         
         // if there's already a signup in storage, parse it. 
         // if not, make count = 0 (to check if count>0, loop and see if email is already taken)
@@ -70,7 +87,6 @@ $(document).ready(function () {
 
                                 localStorage["signUp"]=JSON.stringify(signUpArray);
                                 alert("Sign up successful. You can log in now");
-                                $("#myForm")[0].reset();
                             }else{
                                 alert("We can't find the address");
                             }
