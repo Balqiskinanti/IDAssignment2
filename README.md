@@ -25,7 +25,7 @@ I decided to go for a more simple colour scheme and font as it's a website that 
 My XD Wireframe :art: :
 [Wireframe File](https://github.com/Balqiskinanti/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/tree/main/xd)
 
-Mobile:
+Mobile: https://xd.adobe.com/view/a86b6bb0-00ca-4265-8181-49cad2bb989f-fd38/?fullscreen&hints=off 
 
 Desktop: https://xd.adobe.com/view/8bc0afb3-5362-4be2-81b4-719075701d7c-de93/?fullscreen&hints=off 
 
@@ -47,6 +47,7 @@ Desktop: https://xd.adobe.com/view/8bc0afb3-5362-4be2-81b4-719075701d7c-de93/?fu
 * ERP rates API
 * Traffic speed bands API
 All of these using https://www.mytransport.sg/content/dam/datamall/datasets/LTA_DataMall_API_User_Guide.pdf 
+
 Potential drawbacks : all of these api requires using 'https://cors-anywhere.herokuapp.com/' which might raise error 409: too many request.
 
 ### Technologies Used
