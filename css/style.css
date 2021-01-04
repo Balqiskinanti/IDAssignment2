@@ -6,7 +6,7 @@
 }
 /* set bg image */
 body{
-    background-image: url("https://balqiskinanti.github.io/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/images/background.jpg");
+    background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
