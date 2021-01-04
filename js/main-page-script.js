@@ -36,7 +36,6 @@ $(document).ready(function(){
         headers:{
         },
         data: {
-            // "date_time": "2020-12-18T23:00:00"
         },
         success:function(data){
             // get login array from localstorage
@@ -52,8 +51,8 @@ $(document).ready(function(){
             }else{
                 greetings ="Night";
             } 
+            var loginArray = JSON.parse(localStorage.getItem("login"));
             try {
-                var loginArray = JSON.parse(localStorage.getItem("login"));
                 for (var i = 0; i < loginArray.length; i++) {
                     for (var u = 0; u < data.items[0].forecasts.length; u++){
                         if (loginArray[i].address == data.items[0].forecasts[u].area){
@@ -63,16 +62,65 @@ $(document).ready(function(){
                             break;
                         }
                     }
-                }    
+                }     
             } catch (error) {
-                $('.greetings').html(` <b> Good ${greetings} ${loginArray[i].name} </b>`);
-                alert("there's no data of the weather right now.\nTry refreshing again after 30 mins.");
+                $.ajax({
+                    type:"GET",
+                    dataType: 'json',
+                    contentType:"text/plain",
+                    url:"https://api.data.gov.sg/v1/environment/2-hour-weather-forecast",
+                    headers:{
+                    },
+                    data: {
+                        "date_time": "2020-12-18T23:00:00"
+                    },
+                    success:function(data){
+                        // get login array from localstorage
+                        // loop to see if user's input on home address area = API's data on location
+                        // check if time is morning, afternoon, evening or night
+                        // add message greetings and weather to html
+                        if(hours<12){
+                            greetings = "Morning";
+                        }else if(hours <=16){
+                            greetings ="Afternoon";
+                        }else if(hours <=18){
+                            greetings = "Evening";
+                        }else{
+                            greetings ="Night";
+                        } 
+                        var loginArray = JSON.parse(localStorage.getItem("login"));
+                        for (var i = 0; i < loginArray.length; i++) {
+                            for (var u = 0; u < data.items[0].forecasts.length; u++){
+                                if (loginArray[i].address == data.items[0].forecasts[u].area){
+                                    var forecast = data.items[0].forecasts[0].forecast;
+                                    $('.greetings').html(` <b> Good ${greetings} ${loginArray[i].name} </b>`);
+                                    $('.weather').html(` ${loginArray[i].address} is ${forecast}`);
+                                    break;
+                                }
+                            }
+                        }   
+                    }
+                });
             }
         },
         error:function(data){
             alert("Oh no! The server is experiencing some issues. Try refreshing the page again after 30 mins ,Thank you :)");
         }
     });
+    // alert if there are no data
+    var settings = {
+        "url": "https://api.data.gov.sg/v1/transport/traffic-images?date_time="+dateTime,
+        "method": "GET",
+        "timeout": 0,
+        "headers": {
+        },
+      };
+      
+      $.ajax(settings).done(function (response) {
+        if(response.items[0].length == undefined){
+            alert("The data has not been updated. Try again tomorrow.");
+        }
+      });
     // https://data.gov.sg/dataset
     var url = "https://api.data.gov.sg/v1/transport/carpark-availability?date_time="+dateTime;
     var settings = {
