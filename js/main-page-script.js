@@ -8,6 +8,24 @@ $(document).ready(function(){
     var hours = d.getHours();
     var minutes = d.getMinutes();
     var seconds = d.getSeconds();
+    //change hours to 00 format for API url to work
+    if (hours<10){
+        hours = "0"+hours;
+    }
+      if (minutes<10){
+        minutes = "0"+minutes;
+    }
+    if (seconds<10){
+        seconds = "0"+seconds;
+    }
+    //change the datestr same format as datetime for the checking to work
+    if (month<10){
+        month = "0"+month;
+    }
+      if (date<10){
+        date = "0"+date;
+    }
+    var dateTime = `${year}-${month}-${date}T${hours}%3A${minutes}%3A${seconds}`;
     // API for weather
     // https://data.gov.sg/dataset
     $.ajax({
@@ -18,6 +36,7 @@ $(document).ready(function(){
         headers:{
         },
         data: {
+            // "date_time": "2020-12-18T23:00:00"
         },
         success:function(data){
             // get login array from localstorage
@@ -54,25 +73,7 @@ $(document).ready(function(){
             alert("Oh no! The server is experiencing some issues. Try refreshing the page again after 30 mins ,Thank you :)");
         }
     });
-    //change hours to 00 format for API url to work
-    if (hours<10){
-        hours = "0"+hours;
-    }
-      if (minutes<10){
-        minutes = "0"+minutes;
-    }
-    if (seconds<10){
-        seconds = "0"+seconds;
-    }
-    //change the datestr same format as datetime for the checking to work
-    if (month<10){
-        month = "0"+month;
-    }
-      if (date<10){
-        date = "0"+date;
-    }
     // https://data.gov.sg/dataset
-    var dateTime = `${year}-${month}-${date}T${hours}%3A${minutes}%3A${seconds}`;
     var url = "https://api.data.gov.sg/v1/transport/carpark-availability?date_time="+dateTime;
     var settings = {
         "url": url,
