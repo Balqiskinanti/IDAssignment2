@@ -2,20 +2,21 @@
 $(document).ready(function () {
     // if button is clicked
     $(".btn").click(function (e) {
+        e.preventDefault();
         // get the input for all fields in the form
         var getName = $("#nameInput").val();
         var getMail = $("#mailInput").val();
         var getPassword = $("#passwordInput").val();
         var getAddress= $("#addressInput").val();
 
-        addressArray = ["Ang Mo Kio", "Bedok","Bishan", "Boon Lay","Bukit Batok", "Bukit Merah", "Bukit Panjang", "Bukit Timah", "Central Water Catchment", "Changi", "Chua Chu Kang","Clementi",];
+        var addressArray = ["Ang Mo Kio", "Bedok","Bishan", "Boon Lay","Bukit Batok", "Bukit Merah", "Bukit Panjang", "Bukit Timah", "Central Water Catchment", "Changi", "Chua Chu Kang","Clementi",];
         var address =0;
         for (var i = 0; i < addressArray.length; i++) {
-            if(addressAray[i] == getAddress){
+            if(addressArray[i] == getAddress){
                 address =1;
+                break;
             }
         }
-        e.preventDefault();
         
         // if there's already a signup in storage, parse it. 
         // if not, make count = 0 (to check if count>0, loop and see if email is already taken)
@@ -36,6 +37,7 @@ $(document).ready(function () {
             },
         };
         $.ajax(settings).done(function (response) {
+            console.log("Here");
             // error checking 1 : user to fill in all input before submitting
             if (getPassword=="" || getName=="" || getMail=="" || getAddress==""){
                 alert("please fill in all inputs");
