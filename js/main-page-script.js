@@ -53,16 +53,21 @@ $(document).ready(function(){
             } 
             var loginArray = JSON.parse(localStorage.getItem("login"));
             try {
+                $('.showWeather').append(`<tr><th>Area </th> <th> Forecast</th></tr>`);
+                for (var u = 0; u < data.items[0].forecasts.length; u++){
+                    var forecast = data.items[0].forecasts[u].forecast;
+                    $('.showWeather').append(`<tr><td>${data.items[0].forecasts[u].area} </td> <td> ${forecast}</td></tr>`);
+                }
+                
                 for (var i = 0; i < loginArray.length; i++) {
                     for (var u = 0; u < data.items[0].forecasts.length; u++){
                         if (loginArray[i].address == data.items[0].forecasts[u].area){
-                            var forecast = data.items[0].forecasts[0].forecast;
+                            var forecast = data.items[0].forecasts[u].forecast;
                             $('.greetings').html(` <b> Good ${greetings} ${loginArray[i].name} </b>`);
                             $('.weather').html(` ${loginArray[i].address} is ${forecast}`);
-                            break;
                         }
                     }
-                }     
+                }      
             } catch (error) {
                 $.ajax({
                     type:"GET",
@@ -89,16 +94,21 @@ $(document).ready(function(){
                             greetings ="Night";
                         } 
                         var loginArray = JSON.parse(localStorage.getItem("login"));
+                        $('.showWeather').append(`<tr><th>Area </th> <th> Forecast</th></tr>`);
+                        for (var u = 0; u < data.items[0].forecasts.length; u++){
+                            var forecast = data.items[0].forecasts[u].forecast;
+                            $('.showWeather').append(`<tr><td>${data.items[0].forecasts[u].area} </td> <td> ${forecast}</td></tr>`);
+                        }
+                        
                         for (var i = 0; i < loginArray.length; i++) {
                             for (var u = 0; u < data.items[0].forecasts.length; u++){
                                 if (loginArray[i].address == data.items[0].forecasts[u].area){
-                                    var forecast = data.items[0].forecasts[0].forecast;
+                                    var forecast = data.items[0].forecasts[u].forecast;
                                     $('.greetings').html(` <b> Good ${greetings} ${loginArray[i].name} </b>`);
                                     $('.weather').html(` ${loginArray[i].address} is ${forecast}`);
-                                    break;
                                 }
                             }
-                        }   
+                        }     
                     }
                 });
             }
@@ -118,7 +128,11 @@ $(document).ready(function(){
       
       $.ajax(settings).done(function (response) {
         if(response.items[0].length == undefined){
-            alert("The data has not been updated. Try again tomorrow.");
+            var div= document.createElement("div");
+            div.className="error-message";
+            $(".traffic-h1").append(div);
+            $(".error-message").css("font-size","18px");
+            $(".error-message").html("⚠️Data has not been updated yet. Please try again tomorrow.");
         }
       });
     // https://data.gov.sg/dataset
