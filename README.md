@@ -1,5 +1,6 @@
 # ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website
 Last Updated : 7/1/21
+
 My Github Page: https://balqiskinanti.github.io/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/
 
 This is a website for drivers to check condition on the road. It aims to be a all-in-one platform for drivers to get the necessary information to make the decision on their travels(e.g. Avoid what lanes? Bring jacket? ). It also allows saving of users data: place of stay, reminders to display information such as the weather forecast and today's To-Do so it can further aid their decision making.
@@ -107,19 +108,26 @@ The difference for mobile version is that all rows that have multiple columns wi
 6. Carpark API might return error 500: Internal server error. Hence, alert will be shown.
 
 *Manual user Testing*
+
 https://docs.google.com/spreadsheets/d/1_c4GJOmfPdjJ_WTYawrUgJB0f33cxqqzzZo0tmk5N-U/edit?usp=sharing
 ### Deployement
 My Github Page: https://balqiskinanti.github.io/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/
 #### How to clone this project for your own use? 
 1. Download an IDE (e.g. Visual Studio Code) with the necessary extensions. 
+   
    [download visual studio code here](https://code.visualstudio.com/)
+
    [Check out what extensions to download here](https://scotch.io/bar-talk/22-best-visual-studio-code-extensions-for-web-development)
+
    [Check out how to use visual studio code here](https://www.youtube.com/watch?v=VqCgcpAypFQ)
+
 2. Set up a github account.
+   
    - Go to https://github.com/join 
    - Type a user name, your email address, and a password.
    - Choose Sign up for GitHub, and then follow the instructions. 
    [Video : how to use github on visual studio code](https://www.youtube.com/watch?v=Fk12ELJ9Bww)
+   
    [Setting up user.name and user.email in git](https://www.codegrepper.com/code-examples/delphi/vscode+make+sure+you+configure+your+%27user.name%27+and+%27user.email%27+in+git)
 3. Clone project / Download project.
    * Clone : 
