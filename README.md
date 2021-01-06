@@ -1,13 +1,15 @@
 # ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website
+Last Updated : 7/1/21
 My Github Page: https://balqiskinanti.github.io/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/
 
-This is a website for drivers to check condition on the road. It aims to be a all-in-one platform for drivers to get the necessary information to make the decision on their travels(e.g. Avoid what lanes? Bring jacket? ). It also allows saving of users data: place of stay, reminders to display information such as the weather forecast and today's To-Dos so it can further aid their decision making.
+This is a website for drivers to check condition on the road. It aims to be a all-in-one platform for drivers to get the necessary information to make the decision on their travels(e.g. Avoid what lanes? Bring jacket? ). It also allows saving of users data: place of stay, reminders to display information such as the weather forecast and today's To-Do so it can further aid their decision making.
 
 ## Table Of Contents
 * [Design Process](#design-process)
 * [Features](#features)
 * [Technologies Used](#technologies-used)
 * [Testing](#testing)
+* [Deployement](#deployement)
 * [Credits](#credits)
 
 
@@ -31,24 +33,37 @@ Desktop: https://xd.adobe.com/view/8bc0afb3-5362-4be2-81b4-719075701d7c-de93/?fu
 
 ### Features
 #### Existing Features: 
-* Sign up: allows user to sign up with unique email each time. It also checks if password is more than 8 characters long ,email is valid, and if user has sign up before. 
-* Login : allows user to login.It checks if user enters matching email and password. When the user logged in, they will be greeted good mornig/ afternoon/ evening/ night depending on the time along witht eh weather forecast in their area.
-* Reminders : allows users to :
-   * Add new reminders
-   * Show today's reminders
-   * Show all reminders
-* Weather Forecast: allows user to see the overview of the weather across Singapore.
-* Carpark Slots: allows user to see how many parking slots are left by inputting the carpark number in.
-* Traffic images: allows user to see at real time pictures on the traffic currently by clicking on the interactive map.
-* Traffic Incidents: allows user to check on the current incidents happening on the road. They can also filter the output by inputting their location on the seach bar.
-* Logout : allows user to reset their reminders and login with different credentials.
+* Sign up
+  - allows user to sign up with unique email each time.
+  - It also checks if:
+      -  password is more than 8 characters long ,
+      -  email is valid, 
+      -  and if user has sign up before. 
+* Login 
+  - allows user to login.
+  - It checks if user enters matching email and password. 
+  - When the user logged in, they will be greeted good morning/ afternoon/ evening/ night depending on the time along with the weather forecast in their area.
+* Reminders : 
+  - allows users to :
+      - Add new reminders
+      - Show today's reminders
+      - Show all reminders
+* Weather Forecast
+  -  allows user to see the overview of the weather across Singapore.
+* Carpark Slots: 
+  - allows user to see how many parking slots are left by inputting the carpark number in.
+* Traffic images 
+  - allows user to see at real time pictures on the traffic currently by clicking on the interactive map.
+* Traffic Incidents: 
+  - allows user to check on the current incidents happening on the road, 
+  - filter the output by inputting their location on the seach bar.
+* Logout 
+  - allows user to reset their reminders and login with different credentials.
+* Website is responsive (Collapsible hamburger menu when screen size is small).
 
 #### Potential Features: 
-* ERP rates API
-* Traffic speed bands API
-All of these using https://www.mytransport.sg/content/dam/datamall/datasets/LTA_DataMall_API_User_Guide.pdf 
-
-Potential drawbacks : all of these api requires using 'https://cors-anywhere.herokuapp.com/' which might raise error 409: too many request.
+* CSS transition using Vue.js : https://vuejs.org/v2/guide/transitions.html 
+* Use firebase for login/signup authentication : https://firebase.google.com/docs/auth
 
 ### Technologies Used
 * [HTML](https://html.com/)
@@ -65,6 +80,14 @@ Potential drawbacks : all of these api requires using 'https://cors-anywhere.her
   * This was used to change the background the SVGs for the social links 
 * [Adobe XD](https://www.adobe.com/sea/products/xd.html)
   * This was used to make the wireframe of the Website : desktop and mobile view
+* [Paint 3D](https://www.microsoft.com/en-us/p/paint-3d/9nblggh5fv99)
+  * This was used to crop images and see the pixels dimensions
+* Validators
+   * [HTML validator](https://validator.w3.org/#validate_by_upload) was used to validate HTML
+   * [CSS validator](https://jigsaw.w3.org/css-validator/#validate_by_upload) was used to validate HTML
+   * [Javascript validator](https://jshint.com/) was used to validate HTML
+   * [Spelling checker](https://typosaur.us/) was used to check spelling
+   * [alt checker](https://rushax.com/tools/alt-tag-checker/)was used to check alt for images
 
 
 ### Testing
@@ -81,6 +104,55 @@ The difference for mobile version is that all rows that have multiple columns wi
 3. Clearing cache will clear the data of sign up
 4. Map of traffic images might not return any data. If it doesn't, an error message will be shown. 
 5. Traffic incident page might return error 429:Too many data requests. Hence, alert will be shown.
+6. Carpark API might return error 500: Internal server error. Hence, alert will be shown.
+
+*Manual user Testing*
+https://docs.google.com/spreadsheets/d/1_c4GJOmfPdjJ_WTYawrUgJB0f33cxqqzzZo0tmk5N-U/edit?usp=sharing
+### Deployement
+My Github Page: https://balqiskinanti.github.io/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/
+#### How to clone this project for your own use? 
+1. Download an IDE (e.g. Visual Studio Code) with the necessary extensions. 
+   [download visual studio code here](https://code.visualstudio.com/)
+   [Check out what extensions to download here](https://scotch.io/bar-talk/22-best-visual-studio-code-extensions-for-web-development)
+   [Check out how to use visual studio code here](https://www.youtube.com/watch?v=VqCgcpAypFQ)
+2. Set up a github account.
+   - Go to https://github.com/join 
+   - Type a user name, your email address, and a password.
+   - Choose Sign up for GitHub, and then follow the instructions. 
+   [Video : how to use github on visual studio code](https://www.youtube.com/watch?v=Fk12ELJ9Bww)
+   [Setting up user.name and user.email in git](https://www.codegrepper.com/code-examples/delphi/vscode+make+sure+you+configure+your+%27user.name%27+and+%27user.email%27+in+git)
+3. Clone project / Download project.
+   * Clone : 
+      - navigate to the main page of the repository
+      - click down arrow on Code
+      - under "Clone with HTTPS", click the copy icon to copy link
+      - Open Git Bash
+      - Change the current working directory to the location where you want the cloned directory
+      - Type git clone, and then paste the URL you copied earlier
+      - Press Enter to create your local clone
+   Reference / more info : https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository
+   * Download :
+      - navigate to the main page of the repository
+      - click down arrow on Code
+      - click 'donwload as zip'
+4. Open the folder in your IDE.
+5. Go to traffic-incident-script.js under js folder -> on line 11 , change the account key to your own. [click here for full docs on how to set up account key](https://www.mytransport.sg/content/mytransport/home/dataMall.html)
+6. To check on the API, download and sign up for postman [here](https://www.postman.com/)
+   - on top left corner, click 'new' 
+   - click 'collection' 
+   - enter name of the collection 'Drive Safe App'
+   - click 'create'
+   - on top left corner, click 'new' 
+   - click 'request'
+   - enter request name (e.g. 'carpark')
+   - select the collection 'Drive Safe App' 
+   - click 'save'
+   - click on the request name made ('carpark')
+   - make sure it is set to 'GET' and enter the web API link 
+   - under headers, enter the AccountKey if needed (read documentation for each API used for more info)
+   - click 'Send'
+7. You are all set up!
+   
 
 ### Credits
 #### Media :link: 
@@ -118,6 +190,11 @@ The difference for mobile version is that all rows that have multiple columns wi
       - https://codepen.io/tutweb/pen/waRYOM
       - https://codepen.io/carl-vega/pen/KbGyYX
       - https://codepen.io/pixelgiant/pen/QKOEdq
+3. People that helped me in the process:
+   - User testing : 
+      - Parents
+   - Zechariah, for introducing me to use AccountKey for traffic incident API and inspiring me to code
+   - My lecturer, Mr.Andy, for helping me throughout this process
 #### APIs Used :sun_with_face:
 * [Data.gov.sg](https://data.gov.sg/dataset/)
   * Traffic Images: https://data.gov.sg/dataset/traffic-images?view_id=a0e54baf-6ef7-4bca-9aa2-8c6ca37a0a0e&resource_id=e127e29a-bd48-47e2-a0a7-e89ce31f10c7
