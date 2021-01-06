@@ -124,17 +124,17 @@ $(document).ready(function(){
         "timeout": 0,
         "headers": {
         },
-      };
+    };
       
-      $.ajax(settings).done(function (response) {
-        if(response.items[0].length == undefined){
+    $.ajax(settings).done(function (response) {
+        if(response.items[0].cameras.length == undefined){
             var div= document.createElement("div");
             div.className="error-message";
             $(".traffic-h1").append(div);
             $(".error-message").css("font-size","18px");
             $(".error-message").html("⚠️Data has not been updated yet. Please try again tomorrow.");
         }
-      });
+    });
     // https://data.gov.sg/dataset
     var url = "https://api.data.gov.sg/v1/transport/carpark-availability?date_time="+dateTime;
     var settings = {
