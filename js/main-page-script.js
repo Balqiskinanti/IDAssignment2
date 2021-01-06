@@ -55,14 +55,14 @@ $(document).ready(function(){
             try {
                 $('.showWeather').append(`<tr><th>Area </th> <th> Forecast</th></tr>`);
                 for (var u = 0; u < data.items[0].forecasts.length; u++){
-                    var forecast = data.items[0].forecasts[u].forecast;
+                    forecast = data.items[0].forecasts[u].forecast;
                     $('.showWeather').append(`<tr><td>${data.items[0].forecasts[u].area} </td> <td> ${forecast}</td></tr>`);
                 }
                 
                 for (var i = 0; i < loginArray.length; i++) {
-                    for (var u = 0; u < data.items[0].forecasts.length; u++){
+                    for (u = 0; u < data.items[0].forecasts.length; u++){
                         if (loginArray[i].address == data.items[0].forecasts[u].area){
-                            var forecast = data.items[0].forecasts[u].forecast;
+                            forecast = data.items[0].forecasts[u].forecast;
                             $('.greetings').html(` <b> Good ${greetings} ${loginArray[i].name} </b>`);
                             $('.weather').html(` ${loginArray[i].address} is ${forecast}`);
                         }
@@ -96,14 +96,14 @@ $(document).ready(function(){
                         var loginArray = JSON.parse(localStorage.getItem("login"));
                         // $('.showWeather').append(`<tr><th>Area </th> <th> Forecast</th></tr>`);
                         for (var u = 0; u < data.items[0].forecasts.length; u++){
-                            var forecast = data.items[0].forecasts[u].forecast;
+                            forecast = data.items[0].forecasts[u].forecast;
                             $('.showWeather').append(`<tr><td>${data.items[0].forecasts[u].area} </td> <td> ${forecast}</td></tr>`);
                         }
                         
                         for (var i = 0; i < loginArray.length; i++) {
-                            for (var u = 0; u < data.items[0].forecasts.length; u++){
+                            for ( u = 0; u < data.items[0].forecasts.length; u++){
                                 if (loginArray[i].address == data.items[0].forecasts[u].area){
-                                    var forecast = data.items[0].forecasts[u].forecast;
+                                    forecast = data.items[0].forecasts[u].forecast;
                                     $('.greetings').html(` <b> Good ${greetings} ${loginArray[i].name} </b>`);
                                     $('.weather').html(` ${loginArray[i].address} is ${forecast}`);
                                 }
@@ -137,7 +137,7 @@ $(document).ready(function(){
     });
     // https://data.gov.sg/dataset
     var url = "https://api.data.gov.sg/v1/transport/carpark-availability?date_time="+dateTime;
-    var settings = {
+    settings = {
         "url": url,
         "method": "GET",
         "timeout": 0,
