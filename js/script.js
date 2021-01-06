@@ -35,7 +35,7 @@ $(document).ready(function (e) {
                     let savedDataArray =[];
                     savedDataArray.push(s);
                     localStorage["savedData"]=JSON.stringify(savedDataArray);
-                    alert("Login Successsful. \n Note: Logging in and out will clear previous data");
+                    alert("Login Successsful. \n Note: Logging out will clear previous data");
                 }
             }
             if(flag != true){
