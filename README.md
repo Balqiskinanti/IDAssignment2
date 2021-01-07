@@ -202,7 +202,8 @@ My Github Page: https://balqiskinanti.github.io/ID_S10204973G_BalqisKinantiHaldi
    - User testing : 
       - Parents 
       - Maryam Saniya Hanum, for also giving me design feedbacks
-   - Zechariah, for introducing me oh how to use API and inspiring me to code
+      - Tan Gin Han, for also giving me design feedbacks
+   - Zechariah, for introducing me on how to use API and inspiring me to code
    - My lecturer, Mr.Andy, for helping me throughout this process
 #### APIs Used :sun_with_face:
 * [Data.gov.sg](https://data.gov.sg/dataset/)
