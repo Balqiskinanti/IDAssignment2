@@ -28,9 +28,9 @@ I decided to go for a more simple colour scheme and font as it's a website that 
 My XD Wireframe :art: :
 [Wireframe File](https://github.com/Balqiskinanti/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/tree/main/xd)
 
-Mobile: https://xd.adobe.com/view/a86b6bb0-00ca-4265-8181-49cad2bb989f-fd38/?fullscreen&hints=off 
+Mobile: https://xd.adobe.com/view/a86b6bb0-00ca-4265-8181-49cad2bb989f-fd38/?fullscreen&hints=off
 
-Desktop: https://xd.adobe.com/view/8bc0afb3-5362-4be2-81b4-719075701d7c-de93/?fullscreen&hints=off 
+Desktop: https://xd.adobe.com/view/8bc0afb3-5362-4be2-81b4-719075701d7c-de93/?fullscreen&hints=off
 
 ### Features
 #### Existing Features: 
@@ -88,7 +88,7 @@ Desktop: https://xd.adobe.com/view/8bc0afb3-5362-4be2-81b4-719075701d7c-de93/?fu
    * [CSS validator](https://jigsaw.w3.org/css-validator/#validate_by_upload) was used to validate HTML
    * [Javascript validator](https://jshint.com/) was used to validate HTML
    * [Spelling checker](https://typosaur.us/) was used to check spelling
-   * [alt checker](https://rushax.com/tools/alt-tag-checker/)was used to check alt for images
+   * [alt checker](https://rushax.com/tools/alt-tag-checker/) was used to check alt for images
 
 
 ### Testing
@@ -115,7 +115,7 @@ My Github Page: https://balqiskinanti.github.io/ID_S10204973G_BalqisKinantiHaldi
 #### How to clone this project for your own use? 
 1. Download an IDE (e.g. Visual Studio Code) with the necessary extensions. 
    
-   [download visual studio code here](https://code.visualstudio.com/)
+   [Download visual studio code here](https://code.visualstudio.com/)
 
    [Check out what extensions to download here](https://scotch.io/bar-talk/22-best-visual-studio-code-extensions-for-web-development)
 
@@ -142,7 +142,7 @@ My Github Page: https://balqiskinanti.github.io/ID_S10204973G_BalqisKinantiHaldi
    * Download :
       - navigate to the main page of the repository
       - click down arrow on Code
-      - click 'donwload as zip'
+      - click 'download as zip'
 4. Open the folder in your IDE.
 5. Go to traffic-incident-script.js under js folder -> on line 11 , change the account key to your own. [click here for full docs on how to set up account key](https://www.mytransport.sg/content/mytransport/home/dataMall.html)
 6. To check on the API, download and sign up for postman [here](https://www.postman.com/)
@@ -200,8 +200,9 @@ My Github Page: https://balqiskinanti.github.io/ID_S10204973G_BalqisKinantiHaldi
       - https://codepen.io/pixelgiant/pen/QKOEdq
 3. People that helped me in the process:
    - User testing : 
-      - Parents
-   - Zechariah, for introducing me to use AccountKey for traffic incident API and inspiring me to code
+      - Parents 
+      - Maryam Saniya Hanum, for also giving me design feedbacks
+   - Zechariah, for introducing me oh how to use API and inspiring me to code
    - My lecturer, Mr.Andy, for helping me throughout this process
 #### APIs Used :sun_with_face:
 * [Data.gov.sg](https://data.gov.sg/dataset/)
