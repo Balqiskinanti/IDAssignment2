@@ -1,7 +1,7 @@
 # ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website
 Last Updated : 7/1/21
 
-My Github Page: https://balqiskinanti.github.io/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/
+My Github Page: https://balqiskinanti.github.io/IDAssignment2/
 
 This is a website for drivers to check condition on the road. It aims to be a all-in-one platform for drivers to get the necessary information to make the decision on their travels(e.g. Avoid what lanes? Bring jacket? ). It also allows saving of users data: place of stay, reminders to display information such as the weather forecast and today's To-Do so it can further aid their decision making.
 
