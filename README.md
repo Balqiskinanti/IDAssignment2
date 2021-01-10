@@ -1,5 +1,5 @@
 # ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website
-Last Updated : 7/1/21
+Last Updated : 10/1/21
 
 My Github Page: https://balqiskinanti.github.io/IDAssignment2/
 
@@ -27,6 +27,8 @@ I decided to go for a more simple colour scheme and font as it's a website that 
 
 My XD Wireframe :art: :
 [Wireframe File](https://github.com/Balqiskinanti/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/tree/main/xd)
+
+Click on the four boxes on the top left hand corner to show all pages.
 
 Mobile: https://xd.adobe.com/view/a86b6bb0-00ca-4265-8181-49cad2bb989f-fd38/?fullscreen&hints=off
 
