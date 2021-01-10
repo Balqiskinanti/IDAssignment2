@@ -54,7 +54,6 @@ $(document).ready(function () {
             },
         };
         $.ajax(settings).done(function (response) {
-            console.log("Here");
             // error checking 1 : user to fill in all input before submitting
             if (getPassword=="" || getName=="" || getMail=="" || getAddress==""){
                 alert("please fill in all inputs");
