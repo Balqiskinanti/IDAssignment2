@@ -3,7 +3,7 @@ Last Updated : 10/1/21
 
 My Github Page: https://balqiskinanti.github.io/IDAssignment2/
 
-This is a website for drivers to check condition on the road. It aims to be a all-in-one platform for drivers to get the necessary information to make the decision on their travels(e.g. Avoid what lanes? Bring jacket? ). It also allows saving of users data: place of stay, reminders to display information such as the weather forecast and today's To-Do so it can further aid their decision making.
+This is a website for drivers to check condition on the road. It aims to be a all-in-one platform for drivers to get the necessary information to make the decision on their travels(e.g. Avoid what lanes? Bring jacket? ). It hopes to help them save time on the road and ensure their safety as much as possible.
 
 ## Table Of Contents
 * [Design Process](#design-process)
@@ -16,14 +16,14 @@ This is a website for drivers to check condition on the road. It aims to be a al
 
 ### Design Process
 *UX* : 
-As a driver, I would want a platform where I can see my plans for the day and see the traffic condition without having to switch screens. This ensures that I will not miss any important events (meetings, dinner with family,etc) and be able to plan my timing way ahead based on the traffic condition and weather.
+As a driver, I would want a platform where I can see my plans for the day and see the all the traffic conditions and weather without having to switch apps. This ensures that I will not miss any important events (meetings, dinner with family,etc) and be able to plan my timing way ahead based on the traffic condition and weather.
 
 This app is also customised for each individuals as they will be greeted on the landing page of the website with the time(morning, afternoon/evening/night), and also the weather at the place they have inputted during the sign up. More of the weather forecast is on the seperate weather page. User can click on the link in the navigation bar.
 
 Considering there are also very few apps that offer traffic information, it's also important for the website to be as informative and give as much needed and necessary data as possible. Yet, considering there might be overwhelming amount of data, the search function (for carpark and incident) is also there to filter out the information for convinience. 
 
 *UI* : 
-I decided to go for a more simple colour scheme and font as it's a website that must cater to all individual's taste. I added colours at the header and footer on all pages for consistency. I've also decided to go with the typical landing page, footer and header of websites. All of these is to ensure that the website looks professional. 
+I decided to go for a more simple colour scheme and font as it's a website that must cater to all individual's taste, especially grown-ups. I use the same colours at the header and footer for all pages for consistency. The main color scheme of this website is purple and blue. Blue symbolizes reliability and purple symbolizes wisdom which is my goal. Fonts used are the default from bootstrap. I figured that adding too complicated of a font will be distracting. All of these is to ensure that the website looks professional.
 
 My XD Wireframe :art: :
 [Wireframe File](https://github.com/Balqiskinanti/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/tree/main/xd)
@@ -65,7 +65,7 @@ Desktop: https://xd.adobe.com/view/8bc0afb3-5362-4be2-81b4-719075701d7c-de93/?fu
 * Website is responsive (Collapsible hamburger menu when screen size is small).
 
 #### Potential Features: 
-* CSS transition using Vue.js : https://vuejs.org/v2/guide/transitions.html 
+* CSS transition using Scrollreveal : https://scrollrevealjs.org/
 * Use firebase for login/signup authentication : https://firebase.google.com/docs/auth
 
 ### Technologies Used
