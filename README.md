@@ -113,7 +113,7 @@ The difference for mobile version is that all rows that have multiple columns wi
 
 https://docs.google.com/spreadsheets/d/1_c4GJOmfPdjJ_WTYawrUgJB0f33cxqqzzZo0tmk5N-U/edit?usp=sharing
 ### Deployement
-My Github Page: https://balqiskinanti.github.io/ID_S10204973G_BalqisKinantiHaldiHeryputri_Assg2_website/
+My Github Page: https://balqiskinanti.github.io/IDAssignment2/
 #### How to clone this project for your own use? 
 1. Download an IDE (e.g. Visual Studio Code) with the necessary extensions. 
    
