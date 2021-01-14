@@ -87,8 +87,8 @@ Desktop: https://xd.adobe.com/view/8bc0afb3-5362-4be2-81b4-719075701d7c-de93/?fu
   * This was used to crop images and see the pixels dimensions
 * Validators
    * [HTML validator](https://validator.w3.org/#validate_by_upload) was used to validate HTML
-   * [CSS validator](https://jigsaw.w3.org/css-validator/#validate_by_upload) was used to validate HTML
-   * [Javascript validator](https://jshint.com/) was used to validate HTML
+   * [CSS validator](https://jigsaw.w3.org/css-validator/#validate_by_upload) was used to validate CSS
+   * [Javascript validator](https://jshint.com/) was used to validate JS
    * [Spelling checker](https://typosaur.us/) was used to check spelling
    * [alt checker](https://rushax.com/tools/alt-tag-checker/) was used to check alt for images
 
